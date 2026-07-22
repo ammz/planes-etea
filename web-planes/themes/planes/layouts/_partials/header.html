@@ -1,0 +1,18 @@
+<header class="sticky top-0 z-30 bg-gray-100">
+
+    {{ with site.Menus.main }}
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 text-sm/6 font-semibold text-gray-900">
+	<div class="logo"></div>
+	<div class="lg:flex lg:gap-x-12">
+	    {{ range . }}
+	    {{ if $.IsMenuCurrent .Menu . }}
+	    <a data-active class="border-b-2 data-active:border-gray-400" href="{{ .URL }}">{{ .Name }}</a>
+	    {{ else }}
+	    <a href="{{ .URL }}">{{ .Name }}</a>
+	    {{ end }}
+	    {{ end }}
+	</div>
+	<div class="login"></div>
+    </nav>
+    {{ end }}
+</header>

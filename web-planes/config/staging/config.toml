@@ -1,0 +1,102 @@
+baseURL = "/"
+locale = 'es-ES'
+defaultContentLanguage = 'es'
+title = "Planificación de la Junta de Andalucía"
+date = '{{ time.Now.Format "21-02-2020" }}'
+publishDir = "staging"
+
+theme = "az"
+
+
+[params]
+StrapiServerUrl = "http://localhost:1337/api/consejerias/1"
+  [params.logos]
+    emacs = "img/emacs-logo.png"
+    hugo = "img/hugo-logo.png"
+
+
+[markup]
+ defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+	category = "categories"
+	tag = "tags"
+	consejeria = "consejerias"
+	linea = "lineas"
+	prioridad = "prioridades"
+
+[menu]
+    [[menu.main]]
+        identifier = "inicio"
+        name = "Inicio"
+        pageRef = "/"
+        weight = "10"
+
+    [[menu.main]]
+        identifier = "planes"
+        name = "Planes"
+        pageRef = "/planes"
+        weight = "20"
+
+    [[menu.main]]
+        identifier = "consejerias"
+        name = "Consejerias"
+        pageRef = "/consejerias"
+        weight = "30"
+
+    [[menu.main]]
+        identifier = "objetivos"
+        name = "Objetivos ETEA"
+        pageRef = "/objetivos"
+        weight = "40"
+
+    [[menu.main]]
+        identifier = "objetivos-basicos"
+        name = "Objetivos básicos ETEA"
+        pageRef = "/objetivos-basicos"
+        weight = "50"
+
+    [[menu.main]]
+        identifier = "prioridades"
+        name = "Estructura ETEA"
+        pageRef = "/prioridades"
+        weight = "60"
+
+    [[menu.main]]
+        name = "Líneas"
+        pageRef = "/lineas"
+		parent = "prioridades"
+        weight = "1"
+
+
+[module]
+  [[module.mounts]]
+    source = "static/bulma/css/bulma.min.css"
+    target = "static/css/bulma.min.css"
+  [[module.mounts]]
+    source = "themes/az/node_modules/chart.js/dist/chart.umd.js"
+    target = "static/js/chart.umd.js"
+  [[module.mounts]]
+    source = "themes/az/node_modules/@fortawesome/fontawesome-free/webfonts"
+    target = "static/webfonts"
+  [[module.mounts]]
+    source = "themes/az/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"
+    target = "static/css/fontawesome.css"
+  [[module.mounts]]
+    source = "themes/az/node_modules/@fortawesome/fontawesome-free/css/brands.css"
+    target = "static/css/brands.css"
+  [[module.mounts]]
+    source = "themes/az/node_modules/@fortawesome/fontawesome-free/css/solid.css"
+    target = "static/css/solid.css"
+  [[module.mounts]]
+    source = "themes/az/pdfThumbnails/pdfThumbnails.js"
+    target = "static/js/pdfThumbnails.js"
+  [[module.mounts]]
+    source = "themes/az/pdfThumbnails/pdf.js/build/pdf.js"
+    target = "static/js/pdf.js/build/pdf.js"
+  [[module.mounts]]
+    source = "themes/az/pdfThumbnails/pdf.js/build/pdf.worker.js"
+    target = "static/js/pdf.js/build/pdf.worker.js"

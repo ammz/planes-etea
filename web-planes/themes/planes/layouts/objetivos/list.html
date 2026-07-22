@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<div class="px-8">
+
+    <h1 class="text-3xl text-red-700 font-bold mb-10">{{ .Title | humanize }}</h1>
+
+    {{ range .Pages.GroupByParam "bloque" }}
+    <h2 class="text-xl text-purple-800 my-3">Bloque {{ .Key | strings.Title }} </h2>
+
+    <ul>
+	{{ range .Pages }}
+	<li class="ml-10 my-1" hugo-nav="{{ .RelPermalink }}">
+	    <a class="text-blue-600" href="{{ .Permalink }}">
+		{{ .LinkTitle }}
+	    </a>
+	</li>
+	{{ end }}
+    </ul>
+
+    {{ end }}
+</div>
+
+{{ end }}

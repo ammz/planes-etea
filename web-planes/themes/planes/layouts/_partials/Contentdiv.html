@@ -1,0 +1,12 @@
+{{ $s := .RawContent }}
+
+{{ $s :=  $s | replaceRE "\n::: *$" "\n\n«MDBLOCK-END»\n\n" }}
+{{ $s :=  $s | replaceRE "\n::: ([a-z0-9 ]*)\n" "\n\n«MDBLOCK-class-$1»\n\n" }}
+
+{{ $s :=  $s | markdownify }}
+
+{{ $s :=  $s | replaceRE "<p>«MDBLOCK-END»</p>" "</div>"  }}
+{{ $s :=  $s | replaceRE "<p>«MDBLOCK-class-([^»]*)»</p>" "<div class='$1' >" }}
+
+{{ $s :=  $s | safeHTML }}
+{{ $s }}

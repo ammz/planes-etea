@@ -1,0 +1,13 @@
+<!-- Partial to fetch content from Strapi. -->
+
+{{ $data := "" }}
+
+{{ if .Site.Params.StrapiServerURL }}
+
+{{ $contentURL := printf "%s/" .Site.Params.StrapiServerURL }}
+{{ $remoteData := resources.GetRemote $contentURL }}
+{{ $data := $remoteData | transform.Unmarshal}}
+
+{{ end }}
+
+{{ return $data }}

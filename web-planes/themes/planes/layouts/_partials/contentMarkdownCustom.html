@@ -1,0 +1,60 @@
+{{ $s := .RawContent }}
+{{ $s :=  delimit (slice "\n" $s "\n") "" }}
+
+{{ $s :=  $s | replaceRE "\n(#+) " "\n#$1 " }}
+
+{{ $s :=  $s | replaceRE "\n::: *\n" "\n\n«MDBLOCK-END»\n\n" }}
+{{ $s :=  $s | replaceRE "\n::: ([a-z0-9 ]*)\n" "\n\n«MDBLOCK-class-$1»\n\n" }}
+
+{{ $s :=  $s | replaceRE "\n> https?://vimeo[.]com/([0-9]*) *\n" "\n\n<div class='embed video-player'><iframe src='https://player.vimeo.com/video/$1' width='100%' height='385' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>\n\n" }}
+{{ $s :=  $s | replaceRE "\n> https://youtu.be/([a-zA-Z0-9]*)" "\n\n<div class='embed video-player'><iframe class='youtube-player' type='text/html' width='640' height='385' src='http://www.youtube.com/embed/$1' allowfullscreen frameborder='0'></iframe></div>\n\n" }}
+
+{{ $s :=  $s | replaceRE "\n([$][$].*[$][$])" "\n\n<div class='mathFormat'>$1</div>\n\n"}}
+{{ $s :=  $s | replaceRE "\n[`]([$].*[$])[`]" "\n\n<span class='mathFormat'>$1</div>\n\n"}}
+
+  {{ $s :=  $s | replaceRE "([^`]):(fa-[a-z0-9 -]*):" "$1<i class='fa $2' aria-hidden='true'></i>" }}
+
+  {{ $s :=  $s | markdownify }}
+  {{ $s :=  $s | replaceRE "<p>«MDBLOCK-END»</p>" "</div>"  }}
+  {{ $s :=  $s | replaceRE "<p>«MDBLOCK-class-([^»]*)»</p>" "<div class='$1' >" }}
+
+  {{ $s :=  $s | safeHTML }}
+  {{- $s -}}
+
+
+  {{ $hasMathFormat := findRE "<(div|span) class='mathFormat'>" $s }}
+  {{ if ge (len $hasMathFormat) 1 }}
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [['$','$'], ['\\(','\\)']],
+           displayMath: [['$$','$$'], ['\[','\]']],
+           processEscapes: true,
+           processEnvironments: true,
+           skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+           TeX: { equationNumbers: { autoNumber: "AMS" },
+                  extensions: ["AMSmath.js", "AMSsymbols.js"] }
+       }
+   });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Queue(function() {
+       // Fix <code> tags after MathJax finishes running. This is a
+       // hack to overcome a shortcoming of Markdown. Discussion at
+       // https://github.com/mojombo/jekyll/issues/199
+       var all = MathJax.Hub.getAllJax(), i;
+       for(i = 0; i < all.length; i += 1) {
+           all[i].SourceElement().parentNode.className += ' has-jax';
+       }
+   });
+  </script>
+  {{ end }}
+
+
+  {{ $hasFontAwesome := findRE "<i class='fa fa-" $s }}
+                                   {{ if ge (len $hasFontAwesome) 1 }}
+                                   <script src="https://use.fontawesome.com/53dd1f1274.js"></script>
+                                   {{ end }}

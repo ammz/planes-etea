@@ -1,0 +1,166 @@
+{{ define "main" }}
+
+  <div class="flex">
+
+    <div class="basis-3/4">
+      <div class="mx-10">
+
+	<!-- Nombre Plan / Consejería -->
+	<div class="mb-5">
+	  <h1 class="text-gray-600 text-4xl font-semibold">{{.Title}}</h1>
+	  <ul>
+	    {{ range .GetTerms "consejerias"}}
+	      <li class="text-gray-400">
+		Consejería de {{ .Title }}
+	      </li>
+	    {{ end }}
+	  </ul>
+	</div>
+	<!-- End Nombre Plan / Consejería  -->
+
+	<!-- Card -->
+	<div class="card lg:card-side bg-base-100 shadow-sm lg:items-end mb-10">
+	  <!-- Portada -->
+	  {{ $fichero := (printf "portadas/%s.jpg" .File.ContentBaseName) }}
+	  {{ $portada := resources.GetMatch $fichero }}
+	  <figure>
+	    {{ if $portada }}
+	      <a href="{{ .Params.doc }}" target="_blank">
+		<img class="border border-gray-300"
+		     src="{{ $portada.RelPermalink }}" height="250" />
+	      </a>
+	    {{ else }}
+	      {{ with site.Params.img.notfound }}
+		{{ with resources.Get . }}
+		  <a href="" target="_blank">
+		    <img class="border border-gray-300" src="{{ .RelPermalink }}" width="200" />
+		  </a>
+		{{ end }}
+	      {{ end }}
+	    {{ end }}
+	  </figure>
+	  <div class="card-body">
+	    {{ $completado := "bg-green-100" }}
+	    {{ with .Param "datos" }}
+	      {{ $regex := `(.*?)--([[:alnum:]].*)` }}
+	      {{ $iguala := findRESubmatch $regex .finfpub }}
+	      {{ $ini := index $iguala 0 1 | time.Format "January 2006" | strings.FirstUpper}}
+	      {{ $fin := index $iguala 0 2 | time.Format "January 2006" | strings.FirstUpper}}
+
+	      <!-- Estados tramitación -->
+	      <ul class="timeline timeline-vertical">
+		<li>
+		  <hr />
+		  <div class="timeline-start">
+		    {{ if .faprobado }} {{ .faprobado | time.Format "January 2006" | strings.FirstUpper }} {{ end }}
+		  </div>
+		  <div class="timeline-middle">
+		    <svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			class="h-5 w-5"
+		    >
+		      <path
+			fill-rule="evenodd"
+				   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+				   clip-rule="evenodd"
+		      />
+		    </svg>
+		  </div>
+		  <div class="timeline-end timeline-box {{ with .faprobado }} {{ $completado }} {{ end }}">Aprobado</div>
+		  <hr />
+		</li>
+		<li>
+		  <hr />
+		  <div class="timeline-start">
+		    {{ if .finfpub }}
+		      {{ $ini }} - {{ $fin }}
+		    {{ end }}
+		  </div>
+		  <div class="timeline-middle">
+		    <svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			class="h-5 w-5"
+		    >
+		      <path
+			fill-rule="evenodd"
+				   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+				   clip-rule="evenodd"
+		      />
+		    </svg>
+		  </div>
+		  <div class="timeline-end timeline-box {{if .finfpub}} {{ $completado }} {{ end }}">Inf. Pública</div>
+		  <hr />
+		</li>
+		<li>
+		  <hr />
+		  <div class="timeline-start">
+		    {{if .fformulado }} {{ .fformulado | time.Format "January 2006" | strings.FirstUpper }} {{end}}
+		  </div>
+		  <div class="timeline-middle">
+		    <svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			class="h-5 w-5"
+		    >
+		      <path
+			fill-rule="evenodd"
+				   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+				   clip-rule="evenodd"
+		      />
+		    </svg>
+		  </div>
+		  <div class="timeline-end timeline-box {{if .fformulado}} {{ $completado }} {{ end }}">Formulado</div>
+		</li>
+	      </ul>
+
+	    {{ end }}
+	  </div>
+	</div>
+	<!-- End Card -->
+
+	<div class="tabs tabs-box">
+	  {{ .Content }}
+	</div>
+      </div>
+    </div>
+
+    <div class="basis-1/4 border-l-1 border-gray-300">
+      <div class="pl-3 ">
+	<aside>
+
+	  {{ range .GetTerms "consejerias"}}
+
+	    <h5 class="font-semibold bg-blue-500 text-white p-2"><a href="{{ .Permalink }}"> {{ .LinkTitle }}</a></h5>
+
+	    {{ $actuales := slice "v" "" }}
+	    {{ $expirados := slice "e" }}
+	    {{ $pagesactuales := where .Pages "Params.datos.estado" "in" $actuales }}
+	    {{ range $pagesactuales.GroupByParam "datos.estado" "desc"}}
+	      <p class="border-b-2">{{ if eq .Key "" }} Tramitándose {{ else }} Vigentes {{ end }}</p>
+	      <ul class="text-xs text-gray-600">
+		{{ range .Pages.ByWeight }}
+		  
+		  <a href="{{ .Permalink }}">
+		    <li class="border-b-1 border-gray-200 hover:bg-sky-100
+			       data-active:bg-blue-100 data-active:font-bold px-2 py-1"
+			{{ if eq $.Page .Page }} data-active {{ end }}>
+		      {{ .Title }}
+		    </li>
+		  </a>
+		{{ end }}
+	      </ul>
+	    {{ end }}
+
+	  {{ end }}
+
+	</aside>
+      </div>
+    </div>
+
+  </div>
+{{ end }}

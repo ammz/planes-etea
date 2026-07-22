@@ -1,0 +1,100 @@
+baseURL = "/"
+locale = 'es-ES'
+defaultContentLanguage = 'es'
+title = "Planificación de la Junta de Andalucía"
+date = '{{ time.Now.Format "21-02-2020" }}'
+
+theme = "planes"
+# theme = "az"
+
+
+[params]
+StrapiServerUrl = "http://localhost:1337/api/consejerias/1"
+  [params.logos]
+    emacs = "img/emacs-logo.png"
+    hugo = "img/hugo-logo.png"
+    chartjs = "img/chartjs-logo.svg"
+    apexcharts = "img/apexcharts-logo.svg"
+  [params.img]
+    notfound = "img/notfound.png"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+    [markup.goldmark]
+       [markup.goldmark.renderer]
+         unsafe = true
+       [markup.goldmark.parser]
+         [markup.goldmark.parser.attribute]
+	 title = true
+      
+[taxonomies]
+	category = "categories"
+	tag = "tags"
+	consejeria = "consejerias"
+	linea = "lineas"
+	prioridad = "prioridades"
+	bloque = "bloques"
+
+[menu]
+    [[menu.main]]
+        identifier = "inicio"
+        name = "Inicio"
+        pageRef = "/"
+        weight = "10"
+
+    [[menu.main]]
+        identifier = "planes"
+        name = "Planes"
+        pageRef = "/planes"
+        weight = "20"
+
+    [[menu.main]]
+        identifier = "consejerias"
+        name = "Consejerias"
+        pageRef = "/consejerias"
+        weight = "30"
+
+    [[menu.main]]
+        identifier = "objetivos"
+        name = "Objetivos ETEA"
+        pageRef = "/objetivos"
+        weight = "40"
+
+    [[menu.main]]
+        identifier = "objetivos-basicos"
+        name = "Objetivos básicos ETEA"
+        pageRef = "/objetivos-basicos"
+        weight = "50"
+
+    [[menu.main]]
+        identifier = "prioridades"
+        name = "Estructura ETEA"
+        pageRef = "/prioridades"
+        weight = "60"
+
+    [[menu.main]]
+        name = "Líneas"
+        pageRef = "/lineas"
+	parent = "prioridades"
+        weight = "1"
+
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'

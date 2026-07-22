@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>
+    {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}
+</title>
+
+<link type="image/png" sizes="16x16" rel="icon" href="{{ site.BaseURL }}img/favicon.png">
+
+{{ $js := resources.Get "js/main.js"}}
+<script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+
+{{ if (or (.HasShortcode "chart") (.HasShortcode "chart1") (.HasShortcode "chart2") (.HasShortcode "mychart") (.HasShortcode "mychart2")) }}
+  {{ $jsa := resources.Get "js/apexcharts.js" | js.Build (dict "format" "esm") }}
+  <script src="{{ $jsa.RelPermalink }}"></script>
+{{ end }}
+
+

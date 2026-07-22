@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+	<div class="content">
+          <h1 class="title is-2 has-text-info">{{ .Title }}</h1>
+          <ul>
+	    {{ if eq .Section "planes" }}
+	      <ul>
+		{{ range $key, $taxonomy := .Site.Taxonomies.consejerias }}
+		  <li>
+		    <h2>{{ $key }} - ({{ .Count }} {{if ge .Count 2}} planes {{else}} plan {{end}})</h2>
+		  </li>
+		  <ul>
+		    {{ range $taxonomy.Pages }}
+		      <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+		    {{ end }}
+		  </ul>
+		{{ end}}
+    	      </ul>
+
+            {{ else }}
+              {{ range .Pages }}
+		<li> <a href="{{.Permalink}}">{{ .Page.Title }}</a> </li>
+              {{ end }}
+            {{ end }}
+
+          </ul>
+	</div>
+      </div>
+    </div>
+  </section>
+
+{{ end }}

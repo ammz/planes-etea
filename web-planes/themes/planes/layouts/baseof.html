@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+  <head>
+    {{ partial "head.html" . }}
+    {{ with (templates.Defer (dict "key" "global")) }}
+      {{ partial "css.html" . }}
+    {{ end }}
+  </head>
+  
+  <body>
+    <div class="min-h-screen flex flex-col">
+      {{ partial "header.html" . }}
+
+      <div class="container mx-auto my-5 grow">
+	{{ block "main" . }}
+	{{ end }}
+      </div>
+
+      <footer class="flex items-center justify-center bg-gray-100 text-gray-500 p-3 mt-2 text-xs">
+	{{ partial "footer.html" . }}
+      </footer>
+
+    </div>
+  </body>
+</html>

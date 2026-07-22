@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+<div class="lista px-8">
+
+    <h1 class="text-3xl text-green-800 font-bold">{{ .Title }}</h1>
+    {{ $consej := "consejerias" }}
+    <ul>
+	{{ with ($.Site.GetPage (printf "/%s" $consej)) }}
+
+	{{ range .Pages.ByWeight }}
+	<h2 class="text-3xl text-purple-800 font-bold mt-6 mb-2 border-b-1">
+		  <a class="has-text-info-dark" href="{{ .Permalink }}">{{ .Title }}</a>
+		  <span class="has-text-grey"> ({{ len .Pages }}) </span>
+	</h2>
+	
+	{{ $vigentes := where (.Pages.ByParam "datos.faprobado").Reverse "Params.datos.estado" "v"}}
+	{{ $tramitandose := where (.Pages.ByParam "datos.fformulado").Reverse "Params.datos.estado" ""}}
+	{{ $terminados := where (.Pages.ByParam "datos.faprobado").Reverse "Params.datos.estado" "t"}}
+
+	<h4 class="text-xl text-green-600 font-bold py-3">Planes vigentes ({{len $vigentes}})</h4>
+	<ul>
+	    {{ range $vigentes }}
+	    <li hugo-nav="{{ .RelPermalink }}">
+		<span class="text-xs font-mono text-gray-400">[{{ .Params.datos.faprobado }}]</span> - 
+		<a class="py-3 text-sm font-semibold text-gray-500 hover:text-black" href="{{ .RelPermalink }}">
+		    {{ .LinkTitle }}
+		</a>
+	    </li>
+	    {{ end }}
+	</ul>
+
+	<h4 class="text-xl text-sky-600 font-bold py-3">Planes en tramitación ({{len $tramitandose}})</h4>
+	<ul>
+	    {{ range $tramitandose }}
+	    <li class="" hugo-nav="{{ .RelPermalink }}">
+		<a class="py-3 text-sm font-semibold text-gray-500 hover:text-black" href="{{ .RelPermalink }}">
+		    {{ .LinkTitle }}
+		</a> - <span class="text-xs font-mono text-gray-400">{{ if .Params.datos.finfpub }} Inf.Púb {{else}} Formulado {{ end }}[{{ or .Params.datos.finfpub .Params.datos.fformulado }}]</span>
+	    </li>
+	    {{ end }}
+	</ul>
+
+
+	{{ with $terminados }}
+	<h4 class="text-xl text-sky-600 font-bold py-3">Planes terminados ({{len $terminados}})</h4>
+	<ul>
+	    {{ range $terminados }}
+	    <li class="" hugo-nav="{{ .RelPermalink }}">
+		<a class="py-3 text-sm font-semibold text-gray-500 hover:text-black" href="{{ .RelPermalink }}">
+		    {{ .LinkTitle }}
+	    </li>
+	    {{ end }}
+	</ul>
+
+	{{ end }}
+	{{ end }}
+	{{ end }}
+    </ul>
+
+</div>
+
+{{ end }}

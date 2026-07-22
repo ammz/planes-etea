@@ -1,0 +1,14 @@
+{{ $fecha := .Get `fecha` }}
+
+<details>
+    <summary class="text-sm text-slate-400">Nota CG {{ if $fecha }} de {{ time.Format "02 January 2006" $fecha}} {{ end }} </summary>
+    <article class="p-3 bg-blue-100 text-gray-600">
+	<div class="text-sm text-blue-400 pb-1">
+	    <a class=""
+               href="https://juntadeandalucia.es/organismos/consejo/sesion/detalle/{{.Get `ruta`}}.html"
+               target="_blank">[Enlace web]
+	    </a>
+	</div>
+	<div class="">{{ .Inner | markdownify }}</div>
+    </article>
+</details>

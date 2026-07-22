@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML SYSTEM "about:legacy-compat">
+<html style="height:100%"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="IE=8" http-equiv="X-UA-Compatible"/><meta content="v2.2.34" name="version"/><link href="/intranet/admin/resources/dijit/themes/claro/claro.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/styles/standard.css?v=20220628" media="screen" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/styles/dojoOverride.css" media="screen" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/theme.blue.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/jquery.tablesorter.pager.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/bootstrap-multiselect.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/jqtree.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/jquery.steps.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/jqueryui/jquery-ui.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/jqueryui/jquery-ui.structure.css" type="text/css" rel="stylesheet"/><link href="/intranet/admin/resources/jqueryui/jquery-ui.theme.css" type="text/css" rel="stylesheet"/><script type="text/javascript">var djConfig = {parseOnLoad: true, isDebug: false, locale: 'es-es'};</script><script type="text/javascript" src="/intranet/admin/resources/dojo/dojo.js"></script><script type="text/javascript" src="/intranet/admin/resources/spring/Spring.js"></script><script type="text/javascript" src="/intranet/admin/resources/spring/Spring-Dojo.js"></script><script type="text/javascript" src="/intranet/admin/resources/jquery-2.1.1.js"></script><script type="text/javascript">
+	$(document).bind("mobileinit", function() {
+		//esto es para que no se apliquen los estilos de la libreria mobile de jquery
+		$.mobile.autoInitializePage = false;
+	});
+  </script><script type="text/javascript" src="/intranet/admin/resources/jquery.mobile-1.4.3.js"></script><script type="text/javascript" src="/intranet/admin/resources/jquery.tablesorter.js"></script><script type="text/javascript" src="/intranet/admin/resources/jquery.tablesorter.pager.js"></script><script type="text/javascript" src="/intranet/admin/resources/jquery.tablesorter.widgets.js"></script><script type="text/javascript" src="/intranet/admin/resources/myJqueryTableSorter.js"></script><script type="text/javascript" src="/intranet/admin/resources/myBreadcrumb.js"></script><script type="text/javascript" src="/intranet/admin/resources/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="/intranet/admin/resources/util.js"></script><script type="text/javascript">
+		var mostrarMenuJs = true;
+	</script><script type="text/javascript" src="/intranet/admin/resources/menu.js"></script><script type="text/javascript" src="/intranet/admin/resources/bootstrap-multiselect.js"></script><script type="text/javascript" src="/intranet/admin/resources/mindmup-editabletable.js"></script><script type="text/javascript" src="/intranet/admin/resources/buscadorAvanzado.js"></script><script type="text/javascript" src="/intranet/admin/resources/tree.jquery.js"></script><script type="text/javascript" src="/intranet/admin/resources/jquery.steps.js"></script><script type="text/javascript" src="/intranet/admin/resources/date.js"></script><script type="text/javascript" src="/intranet/admin/resources/jqueryui/jquery-ui.js"></script><script type="text/javascript" src="/intranet/admin/resources/componentes/sortable.js"></script><script type="text/javascript" src="/intranet/admin/resources/componentes/input.js"></script><script type="text/javascript" src="/intranet/admin/resources/ObjectMap.js"></script><title></title><script type="text/javascript">
+		
+		window.onload = function(){
+			var titulo;
+			if($('.breadcrumb').find('li:last').length != 0){
+				titulo = 'Badea3 - '+ $('.breadcrumb').find('li:last').text();
+			}else{
+				titulo = 'Bienvenido a Badea3';
+			}
+		  	$('title').html(titulo);
+		};
+		
+		
+		var url_base = "/intranet/admin/";
+		
+		$(document).ready(function(){
+			
+			
+			$(document).find('form').each(function(){
+				$(this).on('submit',function(e){
+					$('#loading-indicator').modal({
+						  keyboard: false,
+						  backdrop: 'static'
+						});
+					
+				})
+			});
+			$(document).find('form').each(function(){
+				$(this).bind('ajax:complete', function() {
+					$('#loading-indicator').modal('hide');
+			});
+		});
+
+	   });
+
+		</script></head><body style="height:100%" class="claro spring"><div version="2.0" class="cabecera" id="header"><div title="Versión: v2.2.34" class="icono-badea-wrapper"><style>
+		.pull-right.clock{
+			height: 70px !important;
+			opacity: 0.9;
+			display: none;
+		}
+		
+  		.flip-clock-wrapper ul{
+  			width:40px !important;
+  			height:60px !important;
+  			
+  		}
+  		
+  		.flip-clock-wrapper ul li a div.up:after {  			
+  			top: 29px !important;
+  		}
+  		
+  		.flip-clock-wrapper ul li{
+  			line-height:55px !important;
+  		}
+  		
+  		.flip-clock-wrapper ul li a div div.inn {
+  			font-size: 52px !important;
+  		}
+  		
+  		span.flip-clock-label{
+  			display:none;
+  		}
+  		
+  		.flip-clock-dot.top{
+  			top:20px !important;
+  		}
+  		
+  		.flip-clock-dot.bottom{
+  			bottom:5px !important;
+  		}
+  		
+  		.flip-clock-divider {
+  			height:56px;
+		}
+		
+		.flip-clock-wrapper{
+			margin:0px !important;
+			top:-3px;
+		}
+		.clock .timer{
+			float:right;
+			width: 345px;
+		}
+  		</style><div class="pull-right clock"><div class="aviso_bloqueo"><div>Se van a realizar labores de mantenimiento al finalizar la cuenta atrás. Guarde su trabajo.</div><div><a onclick="showMasInfoAviso()" href="#" class="masinfo">Ver más información</a></div></div><div class="timer"><div class="middle"></div></div></div><script type="text/javascript">
+			$(document).ready(function(){
+				$.ajax({
+			        async:true,
+			        cache:false,
+			        dataType:"json",
+			        type: 'GET',
+			        data: {},
+			        url: url_base + "avisosusuarios/getBloqueoActual/json",
+			        success:  function(data){
+						if (typeof data.hours != "undefined" && data.hours != ""){
+						   	loadCSS("/intranet/admin/resources/flipclock/", "flipclock.css", "flipclock_css");
+						   	loadJS("/intranet/admin/resources/flipclock/", "flipclock.min.js", "flipclock_min_js");
+						   	informaBloqueo(data);
+						   	$(".pull-right.clock").show();
+						   	ajustaCabecera();
+			        	}
+			        },
+			        error:function(objXMLHttpRequest){
+			        }
+				});				
+			});
+			
+			function ajustaCabecera(){
+				var anchoTotal = $(".cabecera").width();
+				var anchoLogin = $(".header-login.pull-right").width();				
+				var anchoBloqueo = $(".pull-right.clock").width();				
+				var anchoLogo = 360;
+				
+				var sumaIzq = anchoBloqueo + anchoLogo;
+				var limitLogin = anchoTotal - sumaIzq;
+				if (limitLogin < anchoLogin){
+					var exceso = anchoLogin - limitLogin;
+					var anchoAct = $("#actividad_seleccionada_info").width();					
+					var anchoUser = $(".username").width();
+					var porcAct = (anchoAct + anchoUser) / anchoAct;
+					var porcUser = 1 - porcAct;
+					var maxAnchoAct = parseInt(anchoAct - (exceso * porcAct)); 
+					var maxAnchoUser = parseInt(anchoUser - (exceso * porcUser));
+					if (maxAnchoAct < 0){
+						maxAnchoUser = maxAnchoUser + maxAnchoAct - 30;
+						maxAnchoAct = 30;
+					}
+					if (maxAnchoUser < 0){
+						maxAnchoAct = maxAnchoAct + maxAnchoUser - 30;
+						maxAnchoUser = 30;
+					}
+					
+					if (maxAnchoAct < 0){
+						maxAnchoAct = 30;
+					}
+					
+					if (maxAnchoUser < 0){
+						maxAnchoUser = 30;
+					}
+					$("#actividad_seleccionada_info").css({"maxWidth": maxAnchoAct});
+					$("div.username").css({"maxWidth": maxAnchoUser});
+				}
+			}
+			
+			var bloqueo_titulo="";
+			var bloqueo_mensaje="";
+			function informaBloqueo(counterDown){
+				bloqueo_titulo = counterDown.titulo;
+				bloqueo_mensaje = counterDown.mensaje;
+				
+				var countH = counterDown.hours * 60 * 60;
+				var countM = counterDown.minutes * 60;
+				var countS = counterDown.seconds;
+				var clock = $(".clock .timer").FlipClock(0, {
+					countdown: true,
+				    clockFace: 'HourlyCounter',
+				    excludeMinutes: true,
+				    autoStart: false,
+				    language: 'spanish',
+				    callbacks: {
+						interval: function(){
+							if (clock.getTime() == 0){
+							}        
+						}
+					}
+				});
+				clock.setTime(parseInt(countH) + parseInt(countM) + parseInt(countS));
+				clock.start(); 
+			}
+			
+			function showMasInfoAviso(){
+				$(".modal-title strong").html(bloqueo_titulo); 
+				$(".modal-body div").html(bloqueo_mensaje);
+				$('#masInfoAviso').modal('show');
+			}
+		</script></div><div aria-hidden="true" aria-labelledby="mySmallModalLabel" role="dialog" tabindex="-1" class="modal fade " id="masInfoAviso"><div class="modal-dialog modal-lg"><div class="modal-content avisoHome"><div class="modal-header"><button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button><h4 id="myModalLabel" class="modal-title"><strong></strong></h4></div><div class="modal-body"><div></div></div><div class="modal-footer"><button data-dismiss="modal" class="btn" type="button">Cerrar</button></div></div></div></div></div><script type="text/javascript">
+    		dojo.require("dojo.parser");
+    </script><div style="display: block" id="menuWrapper"><div class="col-sm-12 col-md-12 no-padding"><div id="MainMenu"><div class="list-group panel"></div></div></div><div id="modalActividadEstadistica" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button><h4 class="modal-title">Elección de Actividad Estadística</h4></div><div class="modal-body"><p>Debe elegir una actividad estadística para poder acceder a las opciones del menú</p></div><div class="modal-footer"><button type="button" onclick="$(&#039;#modalActividadEstadistica&#039;).modal(&#039;hide&#039;);">OK</button></div></div></div></div><script type="text/javascript">
+        
+        
+
+        function checkActividad(){
+        	var actividad = document.getElementById('actividad_seleccionada_info');
+        	if(actividad == null){
+        		$('#inicio').on('show.bs.collapse', function (e) {
+        			  e.preventDefault();
+        		});
+        		
+        		$('#modalActividadEstadistica').on('hide.bs.modal', function (e) {
+        			var url = url_base + 'actividadestadisticas/select'
+        			window.location.href=$.mobile.path.makeUrlAbsolute(url);
+        		});
+        		
+        		$('#modalActividadEstadistica').modal('show');
+        	}else{
+	        	if($('#menuWrapper').css('display')!='none'){
+					  $( '#menuWrapper' ).fadeOut(600,function(){
+						  $('.content-template').css('width','100%');
+					  });
+				}else{
+					  $('.content-template').css('width','85%');
+					  $( '#menuWrapper' ).fadeIn(600);
+				}
+        	}
+        };
+        
+			$( document ).ready(function() {
+				var actividad = document.getElementById('actividad_seleccionada_info');
+            	if(actividad == null){
+            	$('#inicio div').on('show.bs.collapse', function (e) {
+					  e.preventDefault();
+					});
+            	}
+				
+ 				if(findCurrentLink(false)){
+ 					pintaMiga(findCurrentLink(true));
+ 				}
+				//Mostrar/Ocultar Menu
+				$('#switch').click(function(e){		
+					checkActividad();
+				});	
+			});
+						
+		</script></div><div class="content-template" id="main"><div class="breadcrumb-wrapper clearfix"><div style="padding-left:0px;width:50px;float:left;padding-top:3px"><a title="Mostrar/Ocultar Menu" role="button" class="btn" style="color:white;background-color: #00C4E1" id="switch"><span class="glyphicon glyphicon-th-list"/></a></div><div style="padding-right:0px;width: calc(100% - 50px);float:right"><ol class="breadcrumb"/></div></div><div class="content-wrapper"><div version="2.0"><script type="text/javascript">dojo.require('dijit.TitlePane');</script><div id="_title_title_id"><script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_title_id', widgetType : 'dijit.TitlePane', widgetAttrs : {title: 'El recurso solicitado no fue encontrado', open: true}})); </script><h2>El recurso solicitado no fue encontrado</h2><p>El recurso solicitado no fue encontrado.</p></div></div></div></div><div id="_mensajeDefault_mensajes_util" class="modal fade no-display"><div class="modal-dialog "><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button><h4 class="modal-title">Advertencia</h4></div><div class="modal-body"><ul class="aviso"></ul></div><div class="modal-footer"><button type="button" onclick="ocultarMensaje_mensajeDefault();">OK</button></div></div></div></div><script type="text/javascript">
+	function addMensaje_mensajeDefault(mensaje,titulo){
+		$('#_mensajeDefault_mensajes_util ul').empty();
+		if(typeof mensaje == "string"){
+			var nuevoLi = $('<li/>').html(mensaje);
+			$('#_mensajeDefault_mensajes_util ul').append(nuevoLi);
+		}else{
+			for(var aux in mensaje){
+				var nuevoLi = $('<li/>');
+				nuevoLi.html(mensaje[aux]);
+				$('#_mensajeDefault_mensajes_util ul').append(nuevoLi);
+			}				
+		}
+		if(titulo != null){
+			$('#_mensajeDefault_mensajes_util .modal-title').text(titulo);
+		}
+		$('#_mensajeDefault_mensajes_util.no-display').removeClass('no-display');
+		$('#_mensajeDefault_mensajes_util').modal('show');
+	}
+	function ocultarMensaje_mensajeDefault(){
+		$('#_mensajeDefault_mensajes_util').modal('hide');
+	}
+</script><div aria-hidden="true" aria-labelledby="mySmallModalLabel" role="dialog" tabindex="-1" backdrop="static" class="modal bs-example-modal-sm" id="loading-indicator"><img style="position:absolute;top:40%;left:45%;" src="/intranet/admin/resources/images/ajax-loader.gif" alt="Badea"/></div></body></html>

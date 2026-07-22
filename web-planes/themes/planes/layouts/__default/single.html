@@ -1,0 +1,133 @@
+{{ define "main" }}
+
+  <div class="section">
+
+    <div class="flex items-end">
+      <!-- Portada -->
+      {{ $docplan := (printf "planes/%s.pdf" .File.ContentBaseName) }}
+      {{ $docupdf := resources.GetMatch $docplan }}
+      {{ if $docupdf }}
+	<div class="mr-2 mt-2">
+	  <a href="{{ .Params.doc }}" target="_blank">
+	    <img class="border border-gray-200"
+		 data-pdf-thumbnail-file="{{ $docupdf.RelPermalink }}"
+		 data-pdf-thumbnail-height="300" height="300" />
+	  </a>
+	</div>
+      {{ end }}
+      <!-- End Portada -->
+
+      <!-- Plan / Consejería -->
+      <div class="">
+	<h1 class="text-gray-900 text-3xl">{{.Title}}</h1>
+	<p class="text-gray-400">
+	  {{ range .Params.consejerias }}
+            {{ with ($.Site.GetPage (printf "consejerias/%s" .)) }}
+              Consejería de {{ .Title }}
+            {{ end }}
+	  {{ end }}
+	</p>
+      </div>
+      <!-- End Plan / Consejería  -->
+    </div>
+
+    <!-- Resumen estado -->
+    <div class="flex">
+
+      <!-- Estados tramitación -->
+      {{ with .Param "datos" }}
+	<div class="flex text-xs text-gray-400 mt-8 py-2 items-center">
+
+	  <!-- Estado -->
+	  <div class="pe-2">
+	    {{ if eq .estado "v" }}
+	      <button class="bg-green-300 text-green-700 p-3 rounded rounded-xl">
+		Vigente
+	      </button>
+	    {{ end }}
+	    {{ if eq .faprobado "" }}
+	      <button class="bg-green-500 text-red-100 px-2 py-1 rounded rounded-xl">
+		En tramitación
+	      </button>
+	    {{ end }}
+	  </div>
+
+	  <!-- Formulado -->
+	  <div class="mx-1">
+	    {{if .fformulado }}
+	      <span class="mr-0 px-2 py-1 bg-green-200 text-green-700 rounded-l-xl rounded-r-0">
+		Formulado
+	      </span>
+	      <span class="ml-0 px-2 py-1 bg-blue-100 text-blue-500 rounded-l-0 rounded-r-xl ">
+		{{ .fformulado }}
+	      </span>
+	    {{ else }}
+	      <span class="mr-0 px-2 py-1 bg-gray-200 text-text-400 rounded-xl">
+		Formulado
+	      </span>
+	    {{ end }}
+	  </div>
+
+	  <!-- Inf. Publica -->
+	  <div class="mx-1">
+	    {{if .finfpub }}
+	      <span class="mr-0 px-2 py-1 bg-green-500 text-green-100 rounded-l-xl rounded-r-0">
+		Información Pública
+	      </span>
+	      <span class="ml-0 px-2 py-1 bg-blue-500 text-blue-100 rounded-l-0 rounded-r-xl ">
+		{{ .finfpub }}
+	      </span>
+	    {{ else }}
+	      <span class="mr-0 px-2 py-1 bg-gray-200 text-text-400 rounded-xl">
+		Infornación Pública
+	      </span>
+	    {{ end }}
+	  </div>
+
+	  <!-- Aprobado -->
+	  <div class="ml-1">
+	    {{if .faprobado }}
+	      <span class="mr-0 px-2 py-1 bg-green-200 text-green-700 rounded-l-xl rounded-r-0">
+		Aprobado
+	      </span>
+	      <span class="ml-0 px-2 py-1 bg-blue-100 text-blue-500 rounded-l-0 rounded-r-xl ">
+		{{ .faprobado }}
+	      </span>
+	    {{ else }}
+	      <span class="mr-0 px-2 py-1 bg-gray-400 text-green-100 rounded-xl">
+		Aprobado
+	      </span>
+	    {{ end }}
+	  </div>
+
+	</div>
+      {{ end }}
+      <!-- End Estados tramitación -->
+
+    </div>
+    <!-- End Resumen estado -->
+
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+
+  <aside class="column aside hero is-fullheight">
+    <div>
+      {{ range .Params.consejerias }}
+	{{ with ($.Site.GetPage (printf "consejerias/%s" .)) }}
+	  <h5>{{ .Title }}</h5>
+	  <ul>
+	    {{ range .Pages.ByWeight }}
+	      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+	    {{ end }}
+	  </ul>
+	{{ end }}
+      {{ end }}
+    </div>
+  </aside>
+
+
+
+{{ end }}

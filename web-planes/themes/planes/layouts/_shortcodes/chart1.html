@@ -1,0 +1,20 @@
+{{ $id := printf "chart-js-%d" .Ordinal }}
+{{ $idTable := printf "tabla-%d" .Ordinal }}
+{{ $idChart := printf "Chart%d" .Ordinal }}
+{{ $iniYear := int (.Get `iniYear`) }}
+
+<div class="" >
+    <canvas id="{{ $id }}"></canvas>
+</div>
+
+<script>
+ var ctx = document.getElementById({{ $id }});
+
+ var Esp = "España";
+ var And = "Andalucía";
+ var yearIni = "{{ $iniYear }}";
+
+ {{ .Inner | safeJS }}
+
+ eval("var a = 1; const {{ $idChart }} = new Chart(ctx, config); {{ $idChart }}.update();");
+</script>

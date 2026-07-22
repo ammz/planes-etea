@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+  {{ $num_bloque := slicestr .Params.prioridades 2 3 }}
+  {{ $cod_prioridad := .Params.prioridades }}
+  {{ $num_prio :=   trim (slicestr .Params.prioridades 3) "0" }}
+  {{ $num_prioridad := printf "%s.%s" $num_bloque $num_prio }}
+  {{ $cod_linea := .Params.lineas }}
+  {{ $num_linea := slicestr .Params.lineas 4 }}
+  {{ $num_act := slicestr .File.ContentBaseName 5}}
+
+  <div class="flex">
+
+    <div class="basis-3/4">
+
+      <h6 class="text-red-400">
+	{{ with ($.Site.GetPage (printf "prioridades/%s" $cod_prioridad)) }}
+          {{ $num_prioridad}}. {{ slicestr .Title 7 }}
+	{{ end }}
+	<br/>
+
+	{{ with ($.Site.GetPage (printf "lineas/%s" $cod_linea)) }}
+          {{ $num_linea }}. {{ .Title }}
+	{{ end }}
+      </h6>
+      <hr/>
+      <h4 class="text-blue-400">{{$num_act}} - {{.Title}}</h4>
+
+      <div class="">
+	{{ .Content }}
+      </div>
+
+    </div>
+
+    <div class="basis-1/4 border-l-1 border-gray-300">
+      <aside class="px-5">
+	{{ with ($.Site.GetPage (printf "lineas/%s" $cod_linea)) }}
+	  <h5 class="text-purple-500">{{ .Title }}</h5>
+	  <ol class="list-decimal text-xs text-gray-600">
+	    {{ range .Pages.ByParam "cod" }}
+	      <li class="">
+		<a href="{{ .Permalink }}">{{ .Title }}</a>
+	      </li>
+	    {{ end }}
+	  </ol>
+	{{ end }}
+      </aside>
+    </div>
+
+  </div>
+{{ end }}

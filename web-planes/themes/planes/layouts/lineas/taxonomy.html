@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="content">
+
+        <h1 class="title is-2 has-text-info">{{ .Title }}</h1>
+        <hr/>
+
+        <!-- list taxonomía -->
+        <!-- {{ if eq .Page.Kind "taxonomy"}} -->
+
+
+        <!-- {{ $taxo := "prioridades" }} -->
+        <!-- <ul class="{{ $taxo }}"> -->
+        <!--   {{ with ($.Site.GetPage (printf "/%s" $taxo)) }} -->
+        <!--   {{ range .Pages }} -->
+        <!--   <li><a href="{{ .Permalink }}">{{ .Title }}</a></li> -->
+
+
+        <!--   {{ end }} -->
+        <!--   {{ end }} -->
+        <!-- </ul> -->
+
+
+        {{ range .Pages.GroupByParam "prioridades" }}
+
+        <h4> {{ .Key }} </h4>
+
+        <ul>
+          {{ range .Pages }}
+
+          <li>
+            <a href="{{ .Permalink }}">
+              {{ .LinkTitle }}
+            </a>
+          </li>
+
+          {{ end}}
+        </ul>
+
+
+        {{ end }}
+
+        {{ else }}
+
+        <!-- terms de la taxonomía -->
+        <ol>
+          {{ range .Pages}}
+          <li>
+            <a href="{{ .Permalink}}">
+              {{ .LinkTitle }}
+            </a>
+          </li>
+          {{ end }}
+        </ol>
+        {{ end }}
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,65 @@
+{{ $id := printf "chart-js-%d" .Ordinal }}
+{{ $idTable := printf "tabla-%d" .Ordinal }}
+{{ $idChart := printf "Chart%d" .Ordinal }}
+{{ $consulta := printf "consultas/consulta-%d.json" (int (.Get `consulta`)) }}
+{{ $query := printf "%d" (int (.Get `consulta`)) }}
+{{ $file := printf "assets/%s" $consulta }}
+{{ $iniYear := int (.Get `iniYear`) }}
+{{ $json := os.ReadFile $file }}
+
+
+<div class="relative">
+  <a class="absolute top-0 right-0 px-2 py-1 bg-sky-300 hover:bg-sky-400 text-white text-xs rounded-full"
+     href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/badea/operaciones/consulta/anual/{{ $query }}"
+     target="_blank">
+    Datos en IECA
+  </a>
+</div>
+
+<div>
+  <canvas id="{{ $id }}"></canvas>
+</div>
+
+{{- $fichero := resources.GetMatch $consulta -}}
+{{- $datos := $fichero | transform.Unmarshal -}}
+<p class="text-xs ml-3 rounded-sm border-1 border-gray-300 bg-yellow-100/10 p-2"><spam class="font-bold">Notas:</spam>{{ $datos.metainfo.notes | markdownify -}}</p>
+
+<details class="p-0 mb-8">
+  <summary><spam class="border-b-3 border-sky-400 text-sm text-gray-500">Tabla de datos</spam></summary>
+  <div>
+    <table id="{{ $idTable }}" class="table text-xs"></table>
+  </div>
+</details>
+
+
+<script>
+ var ctx = document.getElementById({{ $id }});
+ var jsonData = '{{ $json }}';
+
+ var Esp = "España";
+ var And = "Andalucía";
+ var yearIni = "{{ $iniYear }}";
+
+ var datapoints = JSON.parse(jsonData);
+ var meta = datapoints.metainfo;
+ var data = datapoints.data;
+ var medidas = datapoints.measures.filter((value) => value.position == "f");
+
+ {{ .Inner | safeJS }}
+
+ eval("var a = 1; const {{ $idChart }} = new Chart(ctx, config); {{ $idChart }}.update();");
+</script>
+
+<script>
+ var datos = convertCSV(datapoints, indYear, yearIni);
+
+ var num_dim = datos[0].length;
+
+ var valores = num_dim - 1;
+ var num_med = medidas.length;
+ var misdatos = datos.slice(1).filter((values) => values[0] == "Andalucía");
+ if (num_med == 0) filas = [indTerritorio];
+
+ var html = pivotTable(misdatos, valores, filas, columnas);
+ document.getElementById("{{ $idTable }}").innerHTML = html;
+</script>

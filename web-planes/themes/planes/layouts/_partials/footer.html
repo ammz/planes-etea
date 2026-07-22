@@ -1,0 +1,46 @@
+<div class="mr-2">Hecho con:</div>
+
+<div class="flex items-center pr-2">
+    <a href="https://www.gnu.org/software/emacs/" target="_blank" class="mr-1">
+	{{ with site.Params.logos.emacs }}
+	{{ with resources.Get . }}
+	<img src="{{ .RelPermalink }}"
+	     alt="Emacs" width="20" height="20" title="Emacs">
+	{{ end }}
+	{{ end }}
+    </a>
+
+    (<a href="https://orgmode.org">org-mode</a>, <a href="https://ox-hugo.scripter.co">ox-hugo</a>)
+
+</div>
+
+
+<a href="https://gohugo.io" target="_blank" class="mx-2">
+    {{ with site.Params.logos.hugo }}
+    {{ with resources.Get . }}
+    <img src="{{ .RelPermalink }}"
+	 alt="Hugo" width="75" height="20" title="Hugo"/>
+    {{ end }}
+    {{ end }}
+</a>
+
+
+<a href="https://tailwindcss.com/" target="_blank" class="flex mx-2">
+    <svg viewBox="0 0 46 21" fill="none" class="h-4">
+      <path class="fill-sky-400" d="M17.183 0C12.6 0 9.737 2.291 8.59 6.873c1.719-2.29 3.723-3.15 6.014-2.577 1.307.326 2.242 1.274 3.275 2.324 1.685 1.71 3.635 3.689 7.894 3.689 4.582 0 7.445-2.291 8.591-6.872-1.718 2.29-3.723 3.15-6.013 2.576-1.308-.326-2.243-1.274-3.276-2.324C23.39 1.98 21.44 0 17.183 0ZM8.59 10.309C4.01 10.309 1.145 12.6 0 17.182c1.718-2.291 3.723-3.15 6.013-2.577 1.308.326 2.243 1.274 3.276 2.324 1.685 1.71 3.635 3.689 7.894 3.689 4.582 0 7.445-2.29 8.59-6.872-1.718 2.29-3.722 3.15-6.013 2.577-1.307-.327-2.242-1.276-3.276-2.325-1.684-1.71-3.634-3.689-7.893-3.689Z">
+      </path>
+    </svg>tailwindCSS
+</a>
+
+
+<a href="https://apexcharts.com" target="_blank" class="mx-1">
+  {{ with site.Params.logos.apexcharts }}
+    {{ with resources.Get . }}
+      <img src="{{ .RelPermalink }}"
+	   alt="ApexCharts" width="22" height="22" title="ApexCharts">
+    {{ end }}
+  {{ end }}
+</a>
+ApexCharts
+
+

@@ -1,0 +1,16 @@
+{{ define "main"}}
+<div class="flex flex-col w-full items-center">
+    <h1 class="font-semibold text-2xl text-center p-5">{{ .Title }}</h1>
+    <ul class="my-3">
+	{{ range .Pages }}
+	<li class="text-blue-500 py-2 px-4 m-1 bg-orange-100 rounded-md hover:bg-orange-200">
+	    <a class="" href="{{ .Permalink}}">
+		<div>
+		    {{ .LinkTitle }}
+		</div>
+	    </a>
+	</li>
+	{{ end}}
+    </ul>
+</div>
+{{ end }}

@@ -1,0 +1,18 @@
+[2026-02-28 sáb]
+Referencia: https://www.yovirtualizador.com/posts/2023/08/24/
+
+El fichero =mi-codigo-js.html= es un shortcode que inserta el fichero javascript al que hace referencia en la página que queramos con el siguiente trozo de código:
+
+#+begin_src js
+  <div id="id_script_generico">
+  <script
+    type="text/javascript"
+    charset="utf-8"
+    src="{{ index .Params 0 | printf "/scripts/js/%s" | relURL }}.js">
+  </script>
+</div>
+#+end_src
+
+{{ mi-codigo-js fichero-javascript }}
+
+El fichero javascript deberá estar en =/scripts/js=. Esto hay que probarlo. 

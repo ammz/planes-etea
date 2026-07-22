@@ -1,0 +1,77 @@
+{{ define "main" }}
+
+  {{ $param := $.Site.GetPage (printf "prioridades/%s" .Params.prioridades)}}
+  {{ $num_bloque := slicestr (printf "%s" .Params.prioridades) 2 3 }}
+  {{ $cod_prioridad := slicestr (printf "%s" .Params.prioridades) 1 }}
+  {{ $num_prio := trim (slicestr (printf "%s" .Params.prioridades) 3) "0" }}
+  {{ $num_prioridad := printf "%s.%s" $num_bloque $num_prio }}
+
+  <div class="flex">
+
+    <div class="basis-3/4">
+
+      <h6 class="text-orange-400">
+	{{ strings.ToUpper $param.Params.bloque}}
+      </h6>
+      <br/>
+
+      <h6>
+	{{ with ($.Site.GetPage (printf "prioridades/%s" .Params.prioridades)) }}
+          {{ $num_prioridad }}. {{ slicestr .Title 7 }}
+	{{ end }}
+
+	<button class="btn" popovertarget="popover-1" style="anchor-name:--anchor-1">
+	  Button
+	</button>
+	<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+	    popover id="popover-1" style="position-anchor:--anchor-1">
+	  <li><a>Item 1</a></li>
+	  <li><a>Item 2</a></li>
+	</ul>     
+
+
+
+      </h6>
+
+      <h4 class="text-blue-700">
+	{{ with .File }}
+          {{ slicestr (printf "%s" .ContentBaseName) 4 }}.
+	{{ end }}
+	{{ .Title }}
+      </h4>
+
+      <ol class="list-decimal px-5">
+	{{ range .Pages.ByParam "cod" }}
+          <li class="text-sm text-gray-500 py-1" hugo-nav="{{ .RelPermalink }}">
+	    <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+	  </li>
+	{{ end }}
+      </ol>
+
+    </div>
+
+    <aside class="basis-1/4 border-l-1 border-gray-300 px-2">
+
+      <div>
+
+	{{ with ($.Site.GetPage (printf "prioridades/p%s" $cod_prioridad)) }}
+	  <h5 class="text-red-500 text-sm mb-2 border-b-1 border-red-200">{{ .Title }}</h5>
+	{{ end }}
+
+	<ol class="list-[upper-alpha] px-4 text-xs">
+          {{ range where .Site.Taxonomies.lineas "Params.prioridades" (slicestr (printf "P%s" .File.ContentBaseName) 0 5) }}
+	    <li class="border-b-1 border-gray-200 hover:bg-sky-100 
+		       data-active:bg-blue-100 data-active:font-bold px-1 py-1"
+		{{ if eq $.Page .Page }}data-active{{ end }}>
+	      <a href="{{ .Page.Permalink }}">{{ .Page.LinkTitle }}</a>
+	    </li>
+	  {{ end }}
+	</ol>
+
+      </div>
+
+    </aside>
+
+  </div>
+{{ end }}
+

@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+  {{ $title := .Title }}
+  {{ with $title }}
+    <p class="text-3xl">Estructura de la ETEA</p>
+  {{ end }}
+
+  {{ range .Pages.GroupByParam "bloque" }}
+    <h4 class="text-red-500 border-b-1 border-red-200 mt-5">Bloque {{ .Key | strings.ToUpper }}</h4>
+
+    {{ range .Pages }}
+      <details class="collapse " name="my-accordion-det-1" open>
+	<summary class="collapse-title py-0 my-0 text-gray-600">
+          {{ .LinkTitle }} <a href="{{ .Permalink }}"><span class="badge badge-xs badge-soft badge-info">Detalle</span></a>
+	</summary>
+        <ol class="list-[upper-alpha] pl-13">
+          {{ range where .Site.Taxonomies.lineas "Params.prioridades" .File.ContentBaseName }}
+	    <li class="text-blue-400">
+              <a href="{{ .Page.Permalink }}">
+                {{ .Page.LinkTitle }}
+              </a>
+	    </li>
+          {{ end }}
+        </ol>
+      </details>
+    {{ end}}
+
+  {{ end }}
+
+{{ end }}

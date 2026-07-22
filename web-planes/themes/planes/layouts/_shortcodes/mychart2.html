@@ -1,0 +1,299 @@
+{{ $idTable := printf "tabla-%d" .Ordinal }}
+{{ $idChart := printf "Chart%d" .Ordinal }}
+{{ $iniYear := int (.Get `iniYear`) }}
+{{ $indicador := printf "%s" (.Get `indicador`) }}
+{{ $fuente := printf "%s" (.Get `fuente`) }}
+
+<div class="bg-white my-2 py-1">
+
+  <!-- Título + enlace fuente -->
+  <div class="flex items-center justify-between mt-2 pt-1">
+    <div class="bg-orange-100 mr-1 py-1 rounded-t-lg">
+      <h3 class="px-2 text-orange-500 text-lg/6"> {{ $indicador }} </h3>
+    </div>
+    <div class="flex justify-end min-w-26">
+      <a class="px-2 py-1 bg-sky-300 hover:bg-sky-400 text-white text-xs rounded-full"
+	 href="{{ $fuente }}"
+	 target="_blank">
+	Fuente
+      </a>
+    </div>
+  </div>
+
+  <!-- Gráfico -->
+  <div class="border border-orange-100 border-l-8" id="{{ $idChart }}"></div>
+
+  <!-- Tabla de datos -->
+  <div class="border border-orange-100 mt-1 p-3">
+    <table id="{{ $idTable }}" class="table table-zebra table-xs"></table>
+  </div>
+
+  <!-- Notas -->
+    <!-- <details class="p-0 mb-1 ml-4">
+	 <summary><spam class="border-b-3 border-sky-400 text-xs text-gray-500">Notas</spam></summary>
+	 <div class="text-xs ml-3 rounded-sm border-1 border-gray-300 bg-yellow-100/10 p-2"></div>
+	 </details> -->
+
+</div>
+
+<script>
+ var ctx = document.querySelector("#{{ $idChart }}");
+ var yearIni = "{{ $iniYear }}";
+
+ var And = "Andalucía";
+ var Esp = "España";
+ var UE = "Unión Europea 27 (desde 2020)";
+
+ var verde = '#0e6926';
+ var rojo = '#CC4422'; 
+ var azul = '#77B6EA';
+ var gris = '#c2c2bd';
+ var amarillo = '#f2f45e';
+
+ var objetivo = false;
+ var years_obj = [];
+ for (let i = Number(yearIni); i <= 2027; i++) {
+     years_obj[i-Number(yearIni)] = i.toString();
+ }
+
+ var noTabla = false;
+ var conCategorias = false;
+ var discontinuo = false;
+ var ocultaEsp = false;
+ var ocultaUE = false;
+ var ocultaCatEsp = false;
+ var orden = 0; // puede que los datos vengan con las fechas invertidas
+
+ var options = {
+     chart: {
+	 height: 350,
+	 type: 'bar',
+	 stacked: false,
+	 dropShadow: {
+	     enabled: false,
+	     color: '#000',
+	     top: 18,
+	     left: 7,
+	     blur: 10,
+	     opacity: 0.2,
+	 },
+	 zoom: {
+	     enabled: false
+	 },
+	 toolbar: {
+	     show: true
+	 }
+     },
+     tooltip: {
+	 y: {
+	     formatter: function(value, {series, seriesIndex, dataPointIndex, w}) {
+		 if (value == null) {
+		     value = '';
+		 } else {
+		     value = value.toLocaleString('de-DE', {maximumFractionDigits: 2});
+		 }
+		 return value;
+	     }
+	 },
+     },
+     plotOptions: {
+	 bar: {dataLabels: {position: 'top'}}
+     },
+     colors: [verde, rojo, azul, gris, amarillo],
+     stroke: {
+	 curve: 'smooth'
+     },
+     grid: {
+	 borderColor: '#e7e7e7',
+	 row: {
+	     colors: ['#f3f3f3', 'transparent'],
+	     opacity: 0.5
+	 },
+     },
+     annotations: {},
+     markers: {
+	 size: 1
+     },
+     legend: {
+	 position: 'top',
+	 horizontalAlign: 'center',
+	 floating: false,
+	 offsetY: 0,
+	 offsetX: -5
+     },
+     dataLabels: {
+	 enabled: true,
+	 formatter: function(value, {seriesIndex, dataPointIndex, w}) {
+	     if (value == null) {
+		 value = '';
+	     } else if (Number(value) < 100) {
+		 value = value.toLocaleString('de-DE', {
+		     maximumFractionDigits: 2,
+		     minimumFractionDigits: 2});
+	     } else {
+		 value = (value | 0).toLocaleString('de-DE');
+	     }
+	     return value}
+     },
+     xaxis: {
+	 title: {
+	     text: 'Años'
+	 },
+	 tickPlacement: 'between',
+     },
+     yaxis: {
+	 labels: {
+	     formatter: function (value) {
+		 if (value == null) {
+		     value = '';
+		 } else if (Number(value) < 100) {
+		     value = value.toLocaleString('de-DE', {minimunFractionDigits: 1});
+		 } else {
+		     value = (value | 0).toLocaleString('de-DE');
+		 }
+		 return value;
+	     }
+	 }
+     }
+ };
+ // Código específico insertado para cada indicador
+ // --------------------------------------------------
+ {{ .Inner | safeJS }}
+ // -------------------------------------------------- 
+
+ var p_years = data.filter((value) => value[indTerritorio].des == And).map((value) => [value[indYear].des]);
+ var last_year = Math.max.apply(null, p_years);
+ var myyears = [];
+ for (let i = yearIni; i <= last_year; i++) { // 2010 - 2023
+     myyears.push(i);
+ }
+ var prueba = data.filter((value) => value[indTerritorio].des == And).map((value) => [value[1].des])
+ if (discontinuo == true) {
+     // Construye una serie temporal sin discontinuidad
+     var ajusteAnd = data.filter((value) => value[indTerritorio].des == And && value[indYear].des >= yearIni).map((value) => [value[indYear].des, value[medida].val]);
+     var ajusteEsp = data.filter((value) => value[indTerritorio].des == Esp && value[indYear].des >= yearIni).map((value) => [value[indYear].des, value[medida].val]);
+
+     var AndTotal = [];
+     var EspTotal = [];
+
+     var ok = false;
+     for (let i = 0; i < myyears.length; i++) {
+	 let j = 0;
+	 ok = false;
+	 while (j < ajusteAnd.length) {
+	     if (ajusteAnd[j][0] == myyears[i]) {
+		 if (ajusteEsp.length != 0) {EspTotal.push(ajusteEsp[j][1]);}
+		 if (ajusteAnd != []) {AndTotal.push(ajusteAnd[j][1]);}
+		 ok = true;
+		 break;
+	     } else {
+		 j++;
+	     }
+	 }
+	 if (ok == false) {
+	     AndTotal.push(null);
+	     EspTotal.push(null);
+	 }
+     }
+ }
+
+ var years = myyears;	 
+ if (objetivo) {
+     years = years_obj;
+ }
+
+
+ if (numSeries == 1) {
+     options = {...options,
+		series: [
+		    {name: And, data: AndTotal}
+		]
+     };
+ }
+
+ if (numSeries == 2) {
+     options = { ...options,
+		 series: [
+		     {name: And, data: AndTotal, zIndex: 10},
+		     {name: Esp, data: EspTotal}
+		 ]
+     };
+ }
+
+ if (numSeries == 3) {
+     options = { ...options,
+		 series: [
+		     {name: And, data: AndTotal, zIndex: 10},
+		     {name: Esp, data: EspTotal},
+		     {name: UE, data: UETotal}
+		 ]
+     };
+ }
+
+ if (numSeries > 3) {
+     options = {...options,
+		series: [{ ...serie1And},
+			 { ...serie2And},
+			 { ...serie1Esp},
+			 { ...serie2Esp},
+     ]};
+ }
+
+ options.xaxis = {...options.xaxis, categories: years};
+
+ eval("var {{ $idChart }} = new ApexCharts(ctx, options);");
+ eval("{{ $idChart }}.render();");
+
+ 
+ if (ocultaEsp == true) {
+     eval(`{{ $idChart }}.hideSeries('${Esp}')`);
+ }
+ if (ocultaUE == true) {
+     eval(`{{ $idChart }}.hideSeries('${UE}')`);
+ }
+ ocultaEsp == false;
+ ocultaUE == false;
+
+ if (ocultaCatEsp == true) {
+     eval(`{{ $idChart }}.hideSeries('${cat1Esp}')`);
+     eval(`{{ $idChart }}.hideSeries('${cat2Esp}')`);
+ }
+ ocultaCatEsp == false;
+</script>
+
+<script>
+ if (noTabla == false) {
+     var datos = convertCSV(datapoints, indYear, yearIni);
+
+     var valores = datos[0].indexOf("valor");
+     var index = datos[0].indexOf("Territorio");
+     var misdatos = [];
+
+     if (numSeries == 1 || numSeries == 0) {
+	 misdatos = datos.slice(1).filter((values) => (values[index] == And));
+     }
+
+     if (numSeries == 2) {
+	 misdatos = datos.slice(1).filter((values) =>
+	     (values[index] == And ||
+	      values[index] == Esp));
+     }
+
+     if (numSeries == 3) {
+	 misdatos = datos.slice(1).filter((values) =>
+	     (values[index] == And ||
+	      values[index] == Esp ||
+	      values[index] == UE));
+     }
+
+     if (numSeries > 3) {
+	 misdatos = datos.slice(1).filter((values) =>
+	     (values[index] == And ||
+	      values[index] == Esp));
+     }
+
+     var html = pivotTable(misdatos, valores, filas, columnas);
+     document.getElementById("{{ $idTable }}").innerHTML = html;
+ }
+ noTabla = false;
+</script>

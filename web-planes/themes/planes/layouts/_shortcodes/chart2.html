@@ -1,0 +1,105 @@
+{{ $id := printf "chart-js-%d" .Ordinal }}
+{{ $idTable := printf "tabla-%d" .Ordinal }}
+{{ $idChart := printf "Chart%d" .Ordinal }}
+{{ $consulta := printf "consultas/consulta-%d.json" (int (.Get `consulta`)) }}
+{{ $query := printf "%d" (int (.Get `consulta`)) }}
+{{ $file := printf "assets/%s" $consulta }}
+{{ $iniYear := int (.Get `iniYear`) }}
+{{ $json := os.ReadFile $file }}
+
+<p><a href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/badea/operaciones/consulta/anual/{{ $query }}" target="_blank">Datos en IECA</a></p>
+
+<label for="subsectores"> Elija un sector:</label>
+<select id="subsectores" name="subsectores">
+  <option value="0">Agricultura</option>
+  <option value="1">Construcción</option>
+  <option value="2">Industrias extractivas</option>
+  <option value="3">Industria de la alimentación, fabricación de bebidas e industria del tabaco</option>
+  <option value="4">Industria textil, confección de prendas de vestir e industria del cuero y del calzado</option>
+  <option value="5">Industria de la madera y del corcho, industria del papel y artes gráficas</option>
+  <option value="6">Coquerías y refino de petróleo. Industria química</option>
+  <option value="7">Fabricación de productos farmacéuticos</option>
+  <option value="8">Fabricación de productos de caucho y plásticos, y de otros productos minerales no metálicos</option>
+  <option value="9">Metalurgia y fabricación de productos metálicos, excepto maquinaria y equipo</option>
+  <option value="10">Fabricación de productos informáticos, electrónicos y ópticos</option>
+  <option value="11">Fabricación de material y material eléctrico</option>
+  <option value="12">Fabricación de maquinaria y equipo n.c.o.p.</option>
+  <option value="13">Fabricación de material de transporte</option>
+  <option value="14">Fabricación de muebles; otras industrias manufactureras y reparación e instalación de maquinaria y equipo</option>
+  <option value="15">Suministro de energía eléctrica, gas, vapor y aire acondicionado</option>
+  <option value="16">Suministro de agua; actividades de saneamiento, gestión de residuos y descontaminación</option>
+  <option value="17">Comercio al por mayor y al por menor; reparación de vehículos de motor y motocicletas</option>
+  <option value="18">Transporte y almacenamiento</option>
+  <option value="19">Servicios de alojamiento; servicios de comida y bebida</option>
+  <option value="20">Edición, actividades audiovisuales y de radiodifusión</option>
+  <option value="21">Telecomunicaciones</option>
+  <option value="22">Programación, consultoría y otros actividades relacionadas con la informática; servicios de información</option>
+  <option value="23">Actividades financieras y de seguros</option>
+  <option value="24">Actividades inmobiliarias</option>
+  <option value="25">Actividades jurídicas y de contabilidad; actividades de las sedes centrales; actividades de consultoría </option> gestión empresarial; servicios técnicos de arquitectura e ingeniería; ensayos y análisis técnicos</option>
+  <option value="26">Investigación y desarrollo</option>
+  <option value="27">Publicidad y estudios de mercado; otras actividades profesionales, científicas y técnicas; actividad</option> veterinarias</option>
+  <option value="28">Actividades administrativas y servicios auxiliares</option>
+  <option value="29">Administración pública y defensa; seguridad social obligatoria</option>
+  <option value="30">Educación</option>
+  <option value="31">Actividades sanitarias</option>
+  <option value="32">Actividades de servicios sociales</option>
+  <option value="33">Actividades artísticas, recreativas y de entretenimiento</option>
+  <option value="34">Otros servicios</option>
+  <option value="35">Actividades de los hogares como empleadores de personal doméstico o como productores de bienes y servicios para uso propio</option>
+</select>
+
+
+<div class="card">
+  <div class="card-content">
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="{{ $id }}"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <details>
+    <summary class="button is-small">Tabla de datos</summary>
+    <div class="card-content">
+      <div class="table-container">
+        <table id="{{ $idTable }}" class="table"></table>
+      </div>
+      {{- $fichero := resources.GetMatch $consulta -}}
+      {{- $datos := $fichero | transform.Unmarshal -}}
+      <p style="font-size: .65em;">{{ $datos.metainfo.notes | markdownify -}}</p>
+    </div>
+  </details>
+
+</div>
+
+<script>
+ var ctx = document.getElementById({{ $id }});
+ var jsonData = '{{ $json }}';
+
+ var Esp = "España";
+ var And = "Andalucía";
+ var yearIni = "{{ $iniYear }}";
+
+ var datapoints = JSON.parse(jsonData);
+ var meta = datapoints.metainfo;
+ var data = datapoints.data;
+ var medidas = datapoints.measures.filter((value) => value.position == "f");
+
+ {{ .Inner | safeJS }}
+
+ eval("var a = 1; const {{ $idChart }} = new Chart(ctx, config); {{ $idChart }}.update();");
+</script>
+
+<script>
+ var datos = convertCSV(datapoints, indYear, yearIni);
+ var num_dim = datos[0].length;
+
+ var valores = num_dim - 1;
+ var num_med = medidas.length;
+
+ if (num_med == 0) filas = [indTerritorio];
+
+ var html = pivotTable(datos.slice(1), valores, filas, columnas);
+ document.getElementById("{{ $idTable }}").innerHTML = html;
+</script>

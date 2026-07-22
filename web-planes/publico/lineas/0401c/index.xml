@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Servicio Público de Empleo on Planificación de la Junta de Andalucía</title>
+		<link>https://planes.binfante.es/lineas/0401c/</link>
+		<description>Recent content in Servicio Público de Empleo on Planificación de la Junta de Andalucía</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+		
+			<atom:link href="https://planes.binfante.es/lineas/0401c/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Anticipar las necesidades del tejido productivo mediante la modelización, tanto a corto, medio, como largo plazo, con métodos predictivos, de la información disponible sobre las personas desempleadas y las variables estadísticas que caracterizan tanto el mercado de trabajo como las demandas generadas por las necesidades de las empresas.</title>
+				<link>https://planes.binfante.es/actuaciones/0401c05/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0401c05/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Diseñar una cartera de servicios del SAE más amplia y de mejor calidad para la ciudadanía y las empresas.</title>
+				<link>https://planes.binfante.es/actuaciones/0401c01/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0401c01/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Incorporar técnicas de acceso y manejo de información útil y pertinente, que permitan el perfilado de las posibilidades de las personas (oferta) y las necesidades de las empresas (demanda).</title>
+				<link>https://planes.binfante.es/actuaciones/0401c02/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0401c02/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Mayor participación en el proceso de intermediación para la cobertura de los empleos vacantes de manera óptima y en el menor tiempo posible.</title>
+				<link>https://planes.binfante.es/actuaciones/0401c04/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0401c04/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Potenciar la orientación personalizada dentro del SAE de las personas desempleadas en función de su experiencia y cualificación.</title>
+				<link>https://planes.binfante.es/actuaciones/0401c03/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0401c03/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

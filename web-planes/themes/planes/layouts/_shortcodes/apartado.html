@@ -1,0 +1,24 @@
+<input type="radio" name="my_tabs_6" class="tab" aria-label="{{.Get `tab`}}" {{.Get `checked`}}="{{.Get `checked`}}" />
+
+<div class="tab-content bg-base-100 border-base-300 p-6">
+
+  {{ .Inner | markdownify }}
+
+  {{ if (and (eq (.Get `tab`) "Seguimiento") .Page.Params.seg) }}
+    {{ $base := .Page.File.ContentBaseName }}
+    {{ range $k, $v := .Page.Params.seg }}
+
+      {{ $ficheropdf := resources.GetMatch (printf "portadas/%s--%s.jpg" $base $v) }}
+      {{ $fichero := (printf "portadas/%s--%s.jpg" $base $v) }}
+      {{ $portada := resources.GetMatch $fichero }}
+
+      <figure class="mb-3 flex">
+	<a href="{{ $ficheropdf.RelPermalink }}" target="_blank">
+	  <img class="border border-gray-300"
+	       src="{{ $portada.RelPermalink }}"
+	       style="height:100px;">
+	</a>
+      </figure>
+    {{ end }}  
+  {{ end }}
+</div>

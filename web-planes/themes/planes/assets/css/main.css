@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+@source "hugo_stats.json";
+
+@layer components {
+    tramitacion, desarrollo {
+	background-color: var(--color-yellow-100);
+	padding: calc(var(--spacing)* 5);
+    }
+}
+
+@layer base {
+    p {
+	@apply my-2;
+    }    
+}
+
+div.lista ul ul {
+    @apply pl-4;
+}
+div.lista li {
+    @apply list-outside;
+}
+div.tab-content li {
+    @apply list-disc list-outside ml-4 my-2;
+}
+div.tab-content p {
+    @apply text-gray-500 text-sm;
+}
+.outline-1 {
+    @apply mb-8 outline-0;
+}
+.outline-1 h2 {
+    @apply text-sky-700 font-bold border-b-1 border-blue-300 mb-3;
+}
+.outline-2 h3 {
+    @apply text-cyan-700 hover:text-red-800 mt-3;
+}
+.outline-3 {
+    @apply mb-3;
+}
+.outline-2 {
+    @apply outline-0;
+}
+

@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+  <div class="flex">
+
+    <div class="basis-3/4">
+      <div class="mx-10">
+	<!-- Nombre objetivo -->
+	<h1 class="text-red-500 text-2xl font-semibold mb-10">
+	  Objetivo {{strings.TrimLeft "O" .File.ContentBaseName}}: {{.Title | strings.TrimLeft "1234567890." }}
+	</h1>
+
+	{{ .Content }}
+	
+      </div>
+    </div>
+
+    <div class="basis-1/4 border-l-1 border-gray-300">
+      <div class="pl-3">
+	<aside>
+	  {{ $ob := "objetivos" }}
+	  {{ with ($.Site.GetPage (printf "/%s" $ob)) }}
+
+	    {{ range .Pages.GroupByParam "bloque" }}
+	      <h5 class="font-semibold bg-cyan-700 text-white p-2">{{ .Key | strings.Title }}</h5>
+
+	      <ul class="text-xs text-gray-600">
+		{{ range .Pages }}
+		  <a href="{{ .Permalink }}">
+		    <li class="border-b-1 border-gray-200 hover:bg-sky-100
+			       data-active:bg-blue-100 data-active:font-bold px-2 py-1"
+			{{ if eq $.Page .Page }} data-active {{ end }}>
+		      {{ .Title }}
+		    </li>
+		  </a>
+		{{ end }}
+	      </ul>
+	    {{ end }}
+	  {{ end }}
+	</aside>
+      </div>
+    </div>
+
+  </div>
+{{ end }}

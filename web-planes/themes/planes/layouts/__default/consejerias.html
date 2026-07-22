@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+  <div class="content">
+    <ul>
+      {{ range $key, $taxonomy := .Site.Taxonomies.consejerias }}
+	<li>{{ $key }}</li>
+	<ul>
+	  {{ range $taxonomy.Pages }}
+	    <li hugo-nav="{{ .RelPermalink}}">
+              <a href="{{ .Permalink}}">
+                {{ .LinkTitle }}
+              </a>
+	    </li>
+	  {{ end }}
+	</ul>
+      {{ end }}
+    </ul>
+  </div>
+
+{{ end }}

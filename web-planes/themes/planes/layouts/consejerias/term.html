@@ -1,0 +1,249 @@
+{{ define "main"}}
+
+  <!-- v: vigente; e: expirado -->
+  {{ $vigentes := where .Pages "Params.datos.estado" "v" }}
+  {{ $tramitandose := where .Pages "Params.datos.estado" "" }}
+  {{ $expirados := where .Pages "Params.datos.estado" "e" }}
+
+  {{ $consejerias := where .Site.Pages "Type" "consejerias" }}
+  {{ $consejerias = $consejerias | intersect (where .Site.Pages "Kind" "term") }}
+
+  <div class="flex">
+
+    <div class="basis-3/4 px-6">
+
+      <h1 class="text-4xl mb-10 font-semibold text-gray-800">{{ .Title }}</h1>
+
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+
+	<!-- Card aprobados -->
+	{{ with $vigentes }}
+	  <div class="flex flex-col">
+	    <div class="p-1.5 min-w-full inline-block align-middle">
+	      <div class="bg-white border border-gray-200 rounded-xl shadow-2xs overflow-hidden">
+
+		<!-- Header -->
+		<div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 bg-green-100">
+		  <div>
+		    <p class="text-lg text-green-800 font-semibold">Planes vigentes</p>
+		  </div>
+		</div>
+		<!-- End Header -->
+
+		<!-- Table -->
+		<table class="table-auto min-w-full divide-y divide-gray-200">
+		  <thead class="bg-gray-50">
+		    <tr>
+		      <th scope="col" class="ps-6 py-3 text-start">
+			<div class="flex gap-x-2">
+			  <span class="text-xs font-semibold uppercase text-gray-800">Nombre</span>
+			</div>
+		      </th>
+
+		      <th scope="col" class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
+			<div class="flex justify-center gap-x-2">
+			  <span class="text-xs font-semibold uppercase text-gray-800">Aprobado</span>
+			</div>
+		      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody class="divide-y divide-gray-200">
+
+		    {{ range sort $vigentes "Params.datos.faprobado" "desc"}}
+
+		      <tr>
+			<td class="w-72px hover:bg-gray-100">
+			  <a class="text-sm font-semibold text-gray-800 hover:text-blue-400" href="{{ .RelPermalink }}">
+			    <div class="ps-6 py-3">
+			      {{ .LinkTitle }}
+			    </div>
+			  </a>
+			</td>
+
+			<td class="whitespace-nowrap">
+			  <div class="px-6 lg:ps-3 xl:ps-0 pe-6 py-3">
+			    {{ with .Param "datos.faprobado" -}}
+			      <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full"> {{ . }} </span>
+			    {{ end }}
+			  </div>
+			</td>
+		      </tr>
+
+		    {{ end }}
+
+		  </tbody>
+
+		</table>
+		<!-- End Table -->
+
+	      </div>
+	    </div>
+	  </div>
+	{{ end }}
+	<!-- End Card aprobados -->
+
+	<!-- Card tramitandose -->
+	{{ with $tramitandose }}
+	  <div class="flex flex-col">
+	    <div class="p-1.5 min-w-full inline-block align-middle">
+	      <div class="bg-white border border-gray-200 rounded-xl shadow-2xs overflow-hidden">
+
+		<!-- Header -->
+		<div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 bg-yellow-100">
+		  <div>
+		    <p class="text-lg text-yellow-800 font-semibold">Planes en tramitación</p>
+		  </div>
+		</div>
+		<!-- End Header -->
+
+		<!-- Table -->
+		<table class="table-auto min-w-full divide-y divide-gray-200">
+		  <thead class="bg-gray-50">
+		    <tr>
+		      <th scope="col" class="ps-6 py-3 text-start">
+			<div class="flex gap-x-2">
+			  <span class="text-xs font-semibold uppercase text-gray-800">Nombre</span>
+			</div>
+		      </th>
+		      <th scope="col" class="ps-6 pe-6 py-3">
+			<div class="flex justify-center gap-x-2">
+			  <span class="text-xs font-semibold uppercase text-gray-800">Fase</span>
+			</div>
+		      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody class="divide-y divide-gray-200">
+
+		    {{ range ((($tramitandose.ByParam "datos.fformulado").Reverse).ByParam "datos.finfpub").Reverse }}
+
+		      <tr>
+			<td class="w-72px hover:bg-gray-100">
+			  <a class="text-sm font-semibold text-gray-800 hover:text-blue-400" href="{{ .RelPermalink }}">
+			    <div class="ps-6 py-3">
+			      {{ .LinkTitle }}
+			    </div>
+			  </a>
+			</td>
+			<td class="whitespace-nowrap">
+			  <div class="ps-6 pe-6 py-3 text-center">
+
+			    {{ if .Param "datos.finfpub" -}}
+
+			      <span class="py-1 px-2 items-center text-xs font-medium bg-blue-100 text-teal-800 rounded-full">Información Pública</span>
+			      <span class="block py-1 pl-1.5 items-center text-xs font-light text-gray-400">{{ .Param "datos.finfpub" }}</span>
+
+			    {{ else if .Param "datos.fformulado" }}
+
+			      <span class="py-1 px-2 items-center text-xs font-medium bg-orange-100 text-teal-800 rounded-full">Formulado</span>
+			      <span class="block py-1 px-1.5 items-center text-xs font-light text-gray-400">{{ .Param "datos.fformulado" }}</span>
+
+			    {{ else if .Param "datos.finicio" }}
+
+			      <span class="py-1 px-2 items-center text-xs font-medium bg-yellow-100 text-teal-800 rounded-full">Iniciado</span>
+			      <span class="block py-1 px-1.5 items-center text-xs font-light text-gray-400">{{ .Param "datos.finicio" }}</span>
+
+			    {{ end }}
+
+			  </div>
+			</td>
+		      </tr>
+
+		    {{ end }}
+
+		  </tbody>
+		</table>
+		<!-- End Table -->
+		
+	      </div>
+	    </div>
+	  </div>
+	{{ end }}
+	<!-- End Card tramitandose-->
+
+	<!-- Card finalizados -->
+	{{ with $expirados }}
+	  <div class="flex flex-col">
+	    <div class="p-1.5 min-w-full inline-block align-middle">
+	      <div class="bg-white border border-gray-200 rounded-xl shadow-2xs overflow-hidden">
+
+		<!-- Header -->
+		<div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 bg-yellow-100">
+		  <div>
+		    <p class="text-lg text-yellow-800 font-semibold">Histórico de planes</p>
+		  </div>
+		</div>
+		<!-- End Header -->
+
+		<!-- Table -->
+		<table class="table-auto min-w-full divide-y divide-gray-200">
+		  <thead class="bg-gray-50">
+		    <tr>
+		      <th scope="col" class="ps-6 py-3 text-start">
+			<div class="flex items-center gap-x-2">
+			  <span class="text-xs font-semibold uppercase text-gray-800">Nombre</span>
+			</div>
+		      </th>
+		      <th scope="col" class="ps-6 pe-6 py-3">
+			<div class="flex justify-center gap-x-2">
+			  <span class="text-xs font-semibold uppercase text-gray-800">expirado</span>
+			</div>
+		      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody class="divide-y divide-gray-200">
+
+		    {{ range sort $expirados "Params.datos.faprobado" "desc"}}
+
+		      <tr>
+			<td class="w-72px hover:bg-gray-100">
+			  <a class="text-sm font-semibold text-gray-800 hover:text-blue-400" href="{{ .RelPermalink }}">
+			    <div class="ps-6 py-3">
+			      {{ .LinkTitle }}
+			    </div>
+			  </a>
+			</td>
+			<td class="whitespace-nowrap">
+			  <div class="px-6 lg:ps-3 xl:ps-0 pe-6 py-3">
+			    {{ with .Param "datos.faprobado" -}}
+			      <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full"> {{ . }} </span>
+			    {{ end }}
+			  </div>
+			</td>
+		      </tr>
+
+		    {{ end }}
+
+		  </tbody>
+		</table>
+		<!-- End Table -->
+		
+	      </div>
+	    </div>
+	  </div>
+	{{ end }}
+	<!-- End Card finalizados-->
+
+      </div>
+
+    </div>
+
+    <div class="basis-1/4 border-l-1 border-gray-300">
+
+      <h5 class="font-semibold bg-blue-500 text-white p-2">Consejerías</h5>
+
+      <ul>
+	{{ range $consejerias }}
+	  <li class="text-xs text-blue-500 py-2 px-4 m-1 bg-orange-100 rounded-md">
+	    <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+	  </li>
+	{{ end }}
+                  </ul>
+
+    </div>
+
+  </div>
+
+{{ end }}

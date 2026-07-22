@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>0601 - Mejorar la eficiencia de la Administración y la regulación económica on Planificación de la Junta de Andalucía</title>
+		<link>https://planes.binfante.es/prioridades/p0601/</link>
+		<description>Recent content in 0601 - Mejorar la eficiencia de la Administración y la regulación económica on Planificación de la Junta de Andalucía</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+		
+			<atom:link href="https://planes.binfante.es/prioridades/p0601/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>24. Reforzar la confianza en la calidad institucional (aumentando la participación, cooperación y la transparencia, así como mejorando la regulación)</title>
+				<link>https://planes.binfante.es/objetivos-basicos/ob24/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/objetivos-basicos/ob24/</guid>
+				<description>&lt;div class=&#34;bg-white my-2 py-1&#34;&gt;&#xA;&#xA;  &#xA;  &lt;div class=&#34;flex items-center justify-between mt-2 pt-1&#34;&gt;&#xA;    &lt;div class=&#34;bg-orange-100 mr-1 py-1 rounded-t-lg&#34;&gt;&#xA;      &lt;h3 class=&#34;px-2 text-orange-500 text-lg/6&#34;&gt; Índice europeo de calidad institucional &lt;/h3&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;flex justify-end min-w-26&#34;&gt;&#xA;      &lt;a class=&#34;px-2 py-1 bg-sky-300 hover:bg-sky-400 text-white text-xs rounded-full&#34;&#xA;&#x9; href=&#34;https://www.juntadeandalucia.es/institutodeestadisticaycartografia/badea/operaciones/consulta/anual/108439&#34;&#xA;&#x9; target=&#34;_blank&#34;&gt;&#xA;&#x9;Datos en IECA&#xA;      &lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&#xA;  &#xA;  &lt;div class=&#34;border border-orange-100 border-l-8&#34; id=&#34;Chart0&#34;&gt;&lt;/div&gt;&#xA;&#xA;  &#xA;  &lt;div class=&#34;border border-orange-100 mt-1 p-3&#34;&gt;&#xA;    &lt;table id=&#34;tabla-0&#34; class=&#34;table table-zebra table-xs&#34;&gt;&lt;/table&gt;&#xA;  &lt;/div&gt;&#xA;&#xA;  &#xA;  &#xA;  &lt;details class=&#34;p-0 mb-1 ml-4&#34;&gt;&#xA;    &lt;summary&gt;&lt;spam class=&#34;border-b-3 border-sky-400 text-xs text-gray-500&#34;&gt;Notas&lt;/spam&gt;&lt;/summary&gt;&#xA;    &lt;div class=&#34;text-xs ml-3 rounded-sm border-1 border-gray-300 bg-yellow-100/10 p-2&#34;&gt;&#xA;      &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;Definición: &lt;/strong&gt;La calidad institucional se define como un concepto multidimensional que consiste en una alta imparcialidad y calidad de la prestación de servicios públicos, junto con un nivel bajo de corrupción.&lt;strong&gt;&lt;strong&gt;&lt;br /&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/div&gt;&#xA;  &lt;/details&gt;&#xA;  &#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;script&gt;&#xA; var ctx = document.querySelector(&#34;#Chart0&#34;);&#xA; var yearIni = &#34;2010&#34;;&#xA;&#xA; var jsonData = &#39;{\u0022metainfo\u0022:{\u0022id\u0022:108439,\u0022title\u0022:\u0022Índice europeo de calidad institucional\u0022,\u0022subtitle\u0022:\u0022\u0022,\u0022activity\u0022:\u0022Inventario de indicadores para la planificación y el seguimiento de políticas públicas.\u0022,\u0022source\u0022:\u0022\u0022,\u0022periodicity\u0022:\u0022Irregular\u0022,\u0022type\u0022:\u0022I\u0022,\u0022notes\u0022:\u0022\u003cbr \/\u003e\u003cbr \/\u003e\u003cstrong\u003eDefinici\u0026oacute;n:\u0026nbsp;\u003c\/strong\u003eLa calidad institucional se define como un concepto multidimensional que consiste en una alta imparcialidad y calidad de la prestaci\u0026oacute;n de servicios p\u0026uacute;blicos, junto con un nivel bajo de corrupci\u0026oacute;n.\u003cstrong\u003e\u003cstrong\u003e\u003cbr \/\u003e\u003c\/strong\u003e\u003c\/strong\u003e\u0022},\u0022hierarchies\u0022:[{\u0022url\u0022:\u0022https:\/\/www.juntadeandalucia.es\/institutodeestadisticaycartografia\/intranet\/admin\/rest\/v1.0\/jerarquia\/21033?consultaId=108439\u0026alias=D_TERR_PLANIF_0\u0022,\u0022cod\u0022:\u0022d11479_j21033\u0022,\u0022des\u0022:\u0022Territorio\u0022,\u0022position\u0022:\u0022f\u0022,\u0022order\u0022:0,\u0022alias\u0022:\u0022D_TERR_PLANIF_0\u0022,\u0022levels\u0022:[{\u0022id\u0022:22677,\u0022name\u0022:\u0022NIVEL1\u0022,\u0022order\u0022:0},{\u0022id\u0022:22678,\u0022name\u0022:\u0022NIVEL2\u0022,\u0022order\u0022:1}]},{\u0022url\u0022:\u0022https:\/\/www.juntadeandalucia.es\/institutodeestadisticaycartografia\/intranet\/admin\/rest\/v1.0\/jerarquia\/2?consultaId=108439\u0026alias=D_TEMPORAL_0\u0022,\u0022cod\u0022:\u0022d1_j2\u0022,\u0022des\u0022:\u0022Anual\u0022,\u0022position\u0022:\u0022c\u0022,\u0022order\u0022:0,\u0022alias\u0022:\u0022D_TEMPORAL_0\u0022,\u0022levels\u0022:[{\u0022id\u0022:1,\u0022name\u0022:\u0022Año\u0022,\u0022order\u0022:0}]},{\u0022url\u0022:\u0022https:\/\/www.juntadeandalucia.es\/institutodeestadisticaycartografia\/intranet\/admin\/rest\/v1.0\/jerarquia\/22?consultaId=108439\u0026alias=D_SEXO_0\u0022,\u0022cod\u0022:\u0022d22_j22\u0022,\u0022des\u0022:\u0022Sexo\u0022,\u0022position\u0022:\u0022p\u0022,\u0022order\u0022:0,\u0022alias\u0022:\u0022D_SEXO_0\u0022,\u0022levels\u0022:[{\u0022id\u0022:28,\u0022name\u0022:\u0022Nivel0\u0022,\u0022order\u0022:0},{\u0022id\u0022:29,\u0022name\u0022:\u0022Nivel1\u0022,\u0022order\u0022:1}]}],\u0022measures\u0022:[{\u0022id\u0022:700717,\u0022des\u0022:\u0022Índice europeo de calidad institucional\u0022,\u0022position\u0022:\u0022f\u0022,\u0022order\u0022:0,\u0022type\u0022:\u0022m\u0022}],\u0022data\u0022:[[{\u0022cod\u0022:[\u0022C01\u0022], \u0022des\u0022:\u0022Andalucía\u0022},{\u0022cod\u0022:[\u00222024\u0022], \u0022des\u0022:\u00222024\u0022},{\u0022cod\u0022:[\u0022NP\u0022], \u0022des\u0022:\u0022No procede\u0022},{\u0022val\u0022:\u0022-0.764\u0022, \u0022format\u0022:\u0022-0,76\u0022}],[{\u0022cod\u0022:[\u0022C01\u0022], \u0022des\u0022:\u0022Andalucía\u0022},{\u0022cod\u0022:[\u00222021\u0022], \u0022des\u0022:\u00222021\u0022},{\u0022cod\u0022:[\u0022NP\u0022], \u0022des\u0022:\u0022No procede\u0022},{\u0022val\u0022:\u0022-0.523\u0022, \u0022format\u0022:\u0022-0,52\u0022}],[{\u0022cod\u0022:[\u0022C01\u0022], \u0022des\u0022:\u0022Andalucía\u0022},{\u0022cod\u0022:[\u00222017\u0022], \u0022des\u0022:\u00222017\u0022},{\u0022cod\u0022:[\u0022NP\u0022], \u0022des\u0022:\u0022No procede\u0022},{\u0022val\u0022:\u0022-0.642\u0022, \u0022format\u0022:\u0022-0,64\u0022}],[{\u0022cod\u0022:[\u0022C01\u0022], \u0022des\u0022:\u0022Andalucía\u0022},{\u0022cod\u0022:[\u00222013\u0022], \u0022des\u0022:\u00222013\u0022},{\u0022cod\u0022:[\u0022NP\u0022], \u0022des\u0022:\u0022No procede\u0022},{\u0022val\u0022:\u0022-0.054\u0022, \u0022format\u0022:\u0022-0,05\u0022}],[{\u0022cod\u0022:[\u0022C01\u0022], \u0022des\u0022:\u0022Andalucía\u0022},{\u0022cod\u0022:[\u00222010\u0022], \u0022des\u0022:\u00222010\u0022},{\u0022cod\u0022:[\u0022NP\u0022], \u0022des\u0022:\u0022No procede\u0022},{\u0022val\u0022:\u0022-0.111\u0022, \u0022format\u0022:\u0022-0,11\u0022}]]}&#39;;&#xA; var datapoints = JSON.parse(jsonData);&#xA; var data = datapoints.data;&#xA;&#xA; var And = &#34;Andalucía&#34;;&#xA; var Esp = &#34;España&#34;;&#xA; var UE = &#34;Unión Europea 27 (desde 2020)&#34;;&#xA;&#xA; var verde = &#39;#0e6926&#39;;&#xA; var rojo = &#39;#CC4422&#39;; &#xA; var azul = &#39;#77B6EA&#39;;&#xA; var gris = &#39;#c2c2bd&#39;;&#xA; var amarillo = &#39;#f2f45e&#39;;&#xA;&#xA; var objetivo = false;&#xA; var years_obj = [];&#xA; for (let i = Number(yearIni); i &lt;= 2027; i++) {&#xA;     years_obj[i-Number(yearIni)] = i.toString();&#xA; }&#xA;&#xA; var noTabla = false;&#xA; var conCategorias = false;&#xA; var discontinuo = false;&#xA; var ocultaEsp = false;&#xA; var ocultaUE = false;&#xA; var ocultaCatEsp = false;&#xA; var orden = 0; &#xA;&#xA; var options = {&#xA;     chart: {&#xA;&#x9; height: 350,&#xA;&#x9; type: &#39;bar&#39;,&#xA;&#x9; stacked: false,&#xA;&#x9; dropShadow: {&#xA;&#x9;     enabled: false,&#xA;&#x9;     color: &#39;#000&#39;,&#xA;&#x9;     top: 18,&#xA;&#x9;     left: 7,&#xA;&#x9;     blur: 10,&#xA;&#x9;     opacity: 0.2,&#xA;&#x9; },&#xA;&#x9; zoom: {&#xA;&#x9;     enabled: false&#xA;&#x9; },&#xA;&#x9; toolbar: {&#xA;&#x9;     show: true&#xA;&#x9; }&#xA;     },&#xA;     tooltip: {&#xA;&#x9; y: {&#xA;&#x9;     formatter: function(value, {series, seriesIndex, dataPointIndex, w}) {&#xA;&#x9;&#x9; if (value == null) {&#xA;&#x9;&#x9;     value = &#39;&#39;;&#xA;&#x9;&#x9; } else {&#xA;&#x9;&#x9;     value = value.toLocaleString(&#39;de-DE&#39;, {maximumFractionDigits: 2});&#xA;&#x9;&#x9; }&#xA;&#x9;&#x9; return value;&#xA;&#x9;     }&#xA;&#x9; },&#xA;     },&#xA;     plotOptions: {&#xA;&#x9; bar: {dataLabels: {position: &#39;top&#39;}}&#xA;     },&#xA;     colors: [verde, rojo, azul, gris, amarillo],&#xA;     stroke: {&#xA;&#x9; curve: &#39;smooth&#39;&#xA;     },&#xA;     grid: {&#xA;&#x9; borderColor: &#39;#e7e7e7&#39;,&#xA;&#x9; row: {&#xA;&#x9;     colors: [&#39;#f3f3f3&#39;, &#39;transparent&#39;],&#xA;&#x9;     opacity: 0.5&#xA;&#x9; },&#xA;     },&#xA;     annotations: {},&#xA;     markers: {&#xA;&#x9; size: 1&#xA;     },&#xA;     legend: {&#xA;&#x9; position: &#39;top&#39;,&#xA;&#x9; horizontalAlign: &#39;center&#39;,&#xA;&#x9; floating: false,&#xA;&#x9; offsetY: 0,&#xA;&#x9; offsetX: -5&#xA;     },&#xA;     dataLabels: {&#xA;&#x9; enabled: true,&#xA;&#x9; formatter: function(value, {seriesIndex, dataPointIndex, w}) {&#xA;&#x9;     if (value == null) {&#xA;&#x9;&#x9; value = &#39;&#39;;&#xA;&#x9;     } else if (Number(value) &lt; 100) {&#xA;&#x9;&#x9; value = value.toLocaleString(&#39;de-DE&#39;, {&#xA;&#x9;&#x9;     maximumFractionDigits: 2,&#xA;&#x9;&#x9;     minimumFractionDigits: 2});&#xA;&#x9;     } else {&#xA;&#x9;&#x9; value = (value | 0).toLocaleString(&#39;de-DE&#39;);&#xA;&#x9;     }&#xA;&#x9;     return value}&#xA;     },&#xA;     xaxis: {&#xA;&#x9; title: {&#xA;&#x9;     text: &#39;Años&#39;&#xA;&#x9; },&#xA;&#x9; tickPlacement: &#39;between&#39;,&#xA;     },&#xA;     yaxis: {&#xA;&#x9; labels: {&#xA;&#x9;     formatter: function (value) {&#xA;&#x9;&#x9; if (value == null) {&#xA;&#x9;&#x9;     value = &#39;&#39;;&#xA;&#x9;&#x9; } else if (Number(value) &lt; 100) {&#xA;&#x9;&#x9;     value = value.toLocaleString(&#39;de-DE&#39;, {minimunFractionDigits: 1});&#xA;&#x9;&#x9; } else {&#xA;&#x9;&#x9;     value = (value | 0).toLocaleString(&#39;de-DE&#39;);&#xA;&#x9;&#x9; }&#xA;&#x9;&#x9; return value;&#xA;&#x9;     }&#xA;&#x9; }&#xA;     }&#xA; };&#xA; &#xA; &#xA; &#xA; &#xA;&#xA;//js&#xA;var indTerritorio = 0;&#xA;var indYear = 1;&#xA;var medida = 3;&#xA;&#xA;var filas = [indTerritorio];&#xA;var columnas = [indYear];&#xA;&#xA;var discontinuo = true;&#xA;var orden = 1;&#xA;var AndTotal = selector(data,And,medida,orden);&#xA;&#xA;numSeries = 1;&#xA;&#xA;options.chart = {...options.chart, type: &#39;bar&#39;};&#xA;options.yaxis.title = {...options.yaxis.title, text: &#39;Índice&#39;};&#xA;options = {...options,&#xA;           plotOptions: {bar: {dataLabels: {position: &#39;top&#39;}}}};&#xA;//&#xA;&#xA;&#xA; &#xA;&#xA; var p_years = data.filter((value) =&gt; value[indTerritorio].des == And).map((value) =&gt; [value[indYear].des]);&#xA; var last_year = Math.max.apply(null, p_years);&#xA; var myyears = [];&#xA; for (let i = yearIni; i &lt;= last_year; i++) { &#xA;     myyears.push(i);&#xA; }&#xA; var prueba = data.filter((value) =&gt; value[indTerritorio].des == And).map((value) =&gt; [value[1].des])&#xA; if (discontinuo == true) {&#xA;     &#xA;     var ajusteAnd = data.filter((value) =&gt; value[indTerritorio].des == And &amp;&amp; value[indYear].des &gt;= yearIni).map((value) =&gt; [value[indYear].des, value[medida].val]);&#xA;     var ajusteEsp = data.filter((value) =&gt; value[indTerritorio].des == Esp &amp;&amp; value[indYear].des &gt;= yearIni).map((value) =&gt; [value[indYear].des, value[medida].val]);&#xA;&#xA;     var AndTotal = [];&#xA;     var EspTotal = [];&#xA;&#xA;     var ok = false;&#xA;     for (let i = 0; i &lt; myyears.length; i++) {&#xA;&#x9; let j = 0;&#xA;&#x9; ok = false;&#xA;&#x9; while (j &lt; ajusteAnd.length) {&#xA;&#x9;     if (ajusteAnd[j][0] == myyears[i]) {&#xA;&#x9;&#x9; if (ajusteEsp.length != 0) {EspTotal.push(ajusteEsp[j][1]);}&#xA;&#x9;&#x9; AndTotal.push(ajusteAnd[j][1]);&#xA;&#x9;&#x9; ok = true;&#xA;&#x9;&#x9; break;&#xA;&#x9;     } else {&#xA;&#x9;&#x9; j++;&#xA;&#x9;     }&#xA;&#x9; }&#xA;&#x9; if (ok == false) {&#xA;&#x9;     AndTotal.push(null);&#xA;&#x9;     EspTotal.push(null);&#xA;&#x9; }&#xA;     }&#xA; }&#xA;&#xA; var years = myyears;&#x9; &#xA; if (objetivo) {&#xA;     years = years_obj;&#xA; }&#xA;&#xA;&#xA; if (numSeries == 1) {&#xA;     options = {...options,&#xA;&#x9;&#x9;series: [&#xA;&#x9;&#x9;    {name: And, data: AndTotal}&#xA;&#x9;&#x9;]&#xA;     };&#xA; }&#xA;&#xA; if (numSeries == 2) {&#xA;     options = { ...options,&#xA;&#x9;&#x9; series: [&#xA;&#x9;&#x9;     {name: And, data: AndTotal, zIndex: 10},&#xA;&#x9;&#x9;     {name: Esp, data: EspTotal}&#xA;&#x9;&#x9; ]&#xA;     };&#xA; }&#xA;&#xA; if (numSeries == 3) {&#xA;     options = { ...options,&#xA;&#x9;&#x9; series: [&#xA;&#x9;&#x9;     {name: And, data: AndTotal, zIndex: 10},&#xA;&#x9;&#x9;     {name: Esp, data: EspTotal},&#xA;&#x9;&#x9;     {name: UE, data: UETotal}&#xA;&#x9;&#x9; ]&#xA;     };&#xA; }&#xA;&#xA; if (numSeries &gt; 3) {&#xA;     options = {...options,&#xA;&#x9;&#x9;series: [{ ...serie1And},&#xA;&#x9;&#x9;&#x9; { ...serie2And},&#xA;&#x9;&#x9;&#x9; { ...serie1Esp},&#xA;&#x9;&#x9;&#x9; { ...serie2Esp},&#xA;     ]};&#xA; }&#xA;&#xA; options.xaxis = {...options.xaxis, categories: years};&#xA;&#xA; eval(&#34;var Chart0 = new ApexCharts(ctx, options);&#34;);&#xA; eval(&#34;Chart0.render();&#34;);&#xA;&#xA; &#xA; if (ocultaEsp == true) {&#xA;     eval(`Chart0.hideSeries(&#39;${Esp}&#39;)`);&#xA; }&#xA; if (ocultaUE == true) {&#xA;     eval(`Chart0.hideSeries(&#39;${UE}&#39;)`);&#xA; }&#xA; ocultaEsp == false;&#xA; ocultaUE == false;&#xA;&#xA; if (ocultaCatEsp == true) {&#xA;     eval(`Chart0.hideSeries(&#39;${cat1Esp}&#39;)`);&#xA;     eval(`Chart0.hideSeries(&#39;${cat2Esp}&#39;)`);&#xA; }&#xA; ocultaCatEsp == false;&#xA;&lt;/script&gt;&#xA;&#xA;&lt;script&gt;&#xA; if (noTabla == false) {&#xA;     var datos = convertCSV(datapoints, indYear, yearIni);&#xA;     &#xA;     var valores = datos[0].indexOf(&#34;valor&#34;);&#xA;     var territ = datos[0].indexOf(&#34;Territorio&#34;);&#xA;     &#xA;     var misdatos = [];&#xA;&#xA;     if (numSeries == 1 || numSeries == 0) {&#xA;&#x9; misdatos = datos.slice(1).filter(&#xA;&#x9;     (values) =&gt; (!values[2].startsWith(&#34;estado&#34;))).filter(&#xA;&#x9;&#x9; (values) =&gt; (values[territ] == And));&#xA;     }&#xA;&#xA;     if (numSeries == 2) {&#xA;&#x9; misdatos = datos.slice(1).filter(&#xA;&#x9;     (values) =&gt; (!values[2].startsWith(&#34;estado&#34;))).filter((values) =&gt;&#xA;&#x9;&#x9; (values[territ] == And ||&#xA;&#x9;&#x9;  values[territ] == Esp));&#xA;     }&#xA;&#xA;     if (numSeries == 3) {&#xA;&#x9; misdatos = datos.slice(1).filter(&#xA;&#x9;     (values) =&gt; (!values[2].startsWith(&#34;estado&#34;))).filter((values) =&gt;&#xA;&#x9;&#x9; (values[territ] == And ||&#xA;&#x9;&#x9;  values[territ] == Esp ||&#xA;&#x9;&#x9;  values[territ] == UE));&#xA;     }&#xA;&#xA;     if (numSeries &gt; 3) {&#xA;&#x9; misdatos = datos.slice(1).filter(&#xA;&#x9;     (values) =&gt; (!values[2].startsWith(&#34;estado&#34;))).filter((values) =&gt;&#xA;&#x9;&#x9; (values[territ] == And ||&#xA;&#x9;&#x9;  values[territ] == Esp));&#xA;     }&#xA;&#xA;     var html = pivotTable(misdatos, valores, filas, columnas);&#xA;     document.getElementById(&#34;tabla-0&#34;).innerHTML = html;&#xA; }&#xA; noTabla = false;&#xA;&lt;/script&gt;</description>
+			</item>
+			<item>
+				<title>Estrategia para una Minería Sostenible en Andalucía 2030 (EMSA 2030)</title>
+				<link>https://planes.binfante.es/planes/estrategia-mineria-sostenible/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/planes/estrategia-mineria-sostenible/</guid>
+				<description>&lt;input type=&#34;radio&#34; name=&#34;my_tabs_6&#34; class=&#34;tab&#34; aria-label=&#34;Tramitación&#34; checked=&#34;checked&#34; /&gt;&#xA;&#xA;&lt;div class=&#34;tab-content bg-base-100 border-base-300 p-6&#34;&gt;&#xA;&#xA;  &lt;div class=&#34;outline-1&#34;&gt;&#xA;&lt;h2 id=&#34;aprobación&#34;&gt;Aprobación&lt;/h2&gt;&#xA;&lt;div class=&#34;outline-2&#34;&gt;&#xA;&lt;h3 id=&#34;acuerdo-de-25-de-julio-de-2023-del-consejo-de-gobierno-por-el-que-se-aprueba-la-estrategia-para-una-minería-sostenible-en-andalucía-2030--emsa-2030----boja-145-de-2023&#34;&gt;&lt;a href=&#34;https://juntadeandalucia.es/eboja/2023/145/BOJA23-145-00003-12768-01_00287776.pdf&#34;  target=&#34;_blank&#34;&gt;Acuerdo de 25 de julio de 2023, del Consejo de Gobierno, por el que se aprueba la Estrategia para una Minería Sostenible en Andalucía 2030 (EMSA 2030)&lt;/a&gt;&#xA; (&lt;a href=&#34;https://juntadeandalucia.es/eboja/2023/145/index.html&#34;  target=&#34;_blank&#34;&gt;BOJA 145&lt;/a&gt;&#xA; de 2023)&lt;/h3&gt;&#xA;&lt;details&gt;&#xA;    &lt;summary class=&#34;text-sm text-slate-400&#34;&gt;Nota CG  de 25 julio 2023  &lt;/summary&gt;&#xA;    &lt;article class=&#34;p-3 bg-blue-100 text-gray-600&#34;&gt;&#xA;&#x9;&lt;div class=&#34;text-sm text-blue-400 pb-1&#34;&gt;&#xA;&#x9;    &lt;a class=&#34;&#34;&#xA;               href=&#34;https://juntadeandalucia.es/organismos/consejo/sesion/detalle/247922.html&#34;&#xA;               target=&#34;_blank&#34;&gt;[Enlace web]&#xA;&#x9;    &lt;/a&gt;&#xA;&#x9;&lt;/div&gt;&#xA;&#x9;&lt;div class=&#34;&#34;&gt;&lt;p&gt;&lt;strong&gt;El Consejo de Gobierno aprueba la Estrategia para una Minería Sostenible en Andalucía&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;La hoja de ruta del respaldo al sector minero ha sido consensuada con los agentes sociales y económicos más representativos&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Adaptar la dirección y gestión del conocimiento en las actividades de la administración pública a los requerimientos derivados de la incorporación de la inteligencia artificial y el big data.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a05/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a05/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Aplicar el principio “digital por defecto”.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b09/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b09/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Aprobar la ley de función pública y finalizar su desarrollo reglamentario.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c02/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c02/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Avanzar en la aplicación del teletrabajo y en la Ley que lo regula, con una evaluación por resultados, por sus ventajas para la conciliación de la vida laboral con la vida familiar y sus beneficios en términos económicos, ambientales y para la salud.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c08/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c08/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Avanzar en la digitalización de la Administración para un tratamiento telemático de los expedientes, mejorando la comunicación y coordinación entre los diferentes servicios, departamentos y Consejerías de la Administración de la Junta de Andalucía.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a06/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a06/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Construir una plataforma de gobierno del dato e interoperabilidad de la Administración de la Junta de Andalucía desde la perspectiva organizativa, semántica y tecnológica, facilitando el intercambio de datos entre los sistemas de gestión, la generación de información estadística y espacial, la publicación de datos abiertos y el soporte a la toma de decisiones.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b08/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b08/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Efectuar campañas de divulgación y transparencia sobre trabajos, informes o estudios que contengan estimaciones del coste de las trabas administrativas, a fin de concienciar y crear un estado de opinión sobre el ahorro anual que para los operadores económicos y la ciudadanía implica la reducción de trámites y la agilización de los procedimientos.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a03/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a03/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Efectuar una revisión del marco normativo, aplicando los principios de una buena regulación, tales como los de cooperación y comunicación entre las Administraciones Públicas, de necesidad y proporcionalidad de las actuaciones, de simplificación de cargas y de transparencia.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b02/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b02/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Elaborar un estatuto propio para el personal directivo público, en consonancia con el Estatuto Básico del Empleado Público, donde primen los principios de profesionalidad, idoneidad, mérito y capacidad.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c03/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c03/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Establecer un nuevo sistema de carrera profesional, que contemple la promoción horizontal y una evaluación del desempeño, que incentive la motivación, la excelencia y la mayor participación de las personas empleadas públicas en la toma de decisiones.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c05/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c05/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Fomentar e impulsar una mayor coordinación entre administraciones, especialmente con las corporaciones locales, prestándoles una adecuada asistencia técnica e información en las actividades de control, al tiempo que se fomentan las relaciones con la Administración Central en esta materia.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a07/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a07/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Fortalecer la gobernanza multinivel, mediante el uso del mapeo funcional y las revisiones para aclarar responsabilidades y reducir las duplicidades.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b03/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b03/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Implantar el registro “solo una vez” y la prestación automática de servicios.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b06/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b06/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Implementar las actuaciones contenidas en el Plan para la Mejora de la Regulación Económica en Andalucía, a través de la Mesa para la Mejora de la Regulación Económica, y, en particular, de acuerdo con la metodología de la Agencia de la Competencia y de la Regulación Económica de Andalucía (ACREA), avanzar en la reducción de trabas administrativas que afectan a los sectores económicos más importantes y/o emergentes en Andalucía.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a02/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a02/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Impulsar la redacción e implantación de los planes de igualdad en las Consejerías y organismos dependientes.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c10/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c10/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>La regulación y la calidad institucional</title>
+				<link>https://planes.binfante.es/lineas/0601b/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/lineas/0601b/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>La simplificación y agilización administrativa</title>
+				<link>https://planes.binfante.es/lineas/0601a/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/lineas/0601a/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Los recursos humanos en la Administración</title>
+				<link>https://planes.binfante.es/lineas/0601c/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/lineas/0601c/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Mejorar la dotación de medios humanos y materiales, a fin de reforzar las tareas de inspección y de control que detecten posibles focos de fraude o ilegalidad sin afectar a la eficiencia de los operadores que actúan conforme a la normativa.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a04/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a04/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Mejorar la formación del personal al servicio de la Administración Pública a lo largo de su carrera profesional, adecuándose a la transformación digital y fomentando el trabajo en equipo, la colaboración y la gestión del conocimiento, incluidas las redes de aprendizaje y el aprendizaje intergeneracional.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c06/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c06/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Potenciar el asesoramiento externo de las políticas públicas de la Administración de la Junta de Andalucía por instituciones especializadas del sistema andaluz del conocimiento, a modo de laboratorio de ideas y lugares de pensamiento estratégico (think tanks).</title>
+				<link>https://planes.binfante.es/actuaciones/0601b10/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b10/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Proseguir e intensificar el seguimiento y la evaluación de los procedimientos administrativos y actuaciones de simplificación y reducción de trabas administrativas para detectar las opciones existentes y alcanzar compromisos vinculantes.</title>
+				<link>https://planes.binfante.es/actuaciones/0601a01/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601a01/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Proseguir impulsando la innovación entre los recursos humanos de la Administración, mediante itinerarios formativos y laboratorios de innovación y programas de autodiagnóstico en unidades administrativas, entre otras actuaciones.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c09/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c09/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Realizar auditorías periódicas sobre los procesos y procedimientos administrativos para racionalizar y agilizar los mismos, mejorando la interoperabilidad tanto entre los centros directivos de las distintas Consejerías de la Administración Autonómica como  con otras Administraciones.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b01/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b01/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Realizar pruebas de autodiagnóstico para conocer lo que necesitan y esperan la ciudadanía, las empresas y otras administraciones de los servicios públicos, por ejemplo, utilizando encuestas, grupos de trabajo temáticos, entre otras.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b04/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b04/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Realizar una planificación estratégica en materia de recursos humanos que aborde el conjunto de actuaciones destinadas a su gestión en la Administración General, en tanto que garantes del adecuado funcionamiento de ésta e instrumento imprescindible para implementar las políticas públicas, con el fin último de responder eficaz y eficientemente a las necesidades, problemas y retos de la ciudadanía de los próximos diez años.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c01/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c01/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Rediseñar la relación de los puestos (RPT) en función de las necesidades reales, atendiendo al enriquecimiento de tareas y responsabilidades, permitiendo un equilibrio y adecuación más ágil a las necesidades.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c04/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c04/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Revisar toda la cartera de servicios para comprobar solapamientos, rigideces e ineficiencias, incluyendo los trámites y plazos del Registro de Procedimientos y Servicios de la Administración de la Junta de Andalucía, valorando el grado de incidencia real de los mismos mediante robustas metodologías y criterios cualitativos y cuantitativos de evaluación.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b05/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b05/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Utilizar soluciones informáticas homogéneas y compatibles que permitan la interacción y comunicación inter e intrainstitucionales, mejorando el rendimiento de las administraciones públicas.</title>
+				<link>https://planes.binfante.es/actuaciones/0601b07/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601b07/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Velar por la consecución de objetivos en materia de conciliación, de modo que sea compatible la responsabilidad en el trabajo y las necesidades familiares, estableciendo horarios flexibles y ayudas al cuidado de ancianos y niños.</title>
+				<link>https://planes.binfante.es/actuaciones/0601c07/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0601c07/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

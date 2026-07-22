@@ -1,0 +1,8 @@
+#!/bin/sh
+USER=ammz
+HOST=ocean3
+DIR=hugo-planes/
+
+hugo --config config/production/config.toml build && rsync -avz --delete publico/ ${USER}@${HOST}:~/${DIR}
+
+exit 0

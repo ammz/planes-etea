@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Áreas rurales y zonas de baja densidad demográfica on Planificación de la Junta de Andalucía</title>
+		<link>https://planes.binfante.es/lineas/0301b/</link>
+		<description>Recent content in Áreas rurales y zonas de baja densidad demográfica on Planificación de la Junta de Andalucía</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+		
+			<atom:link href="https://planes.binfante.es/lineas/0301b/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Asesoramiento a las entidades locales en los proyectos de despliegues de redes de banda ancha de última generación y en la adopción de estrategias de Territorio Inteligente.</title>
+				<link>https://planes.binfante.es/actuaciones/0301b02/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0301b02/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Favorecer la extensión de la banda ancha de muy alta velocidad y la cobertura 5G en zonas rurales y áreas de baja densidad poblacional, impulsando de esta manera la cohesión territorial y su transformación digital.</title>
+				<link>https://planes.binfante.es/actuaciones/0301b01/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://planes.binfante.es/actuaciones/0301b01/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

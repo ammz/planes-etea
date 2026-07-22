@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="content">
+
+        <h1 class="title is-2 has-text-info">Prioridad {{ .Title }}</h1>
+        <hr/>
+		{{ if eq .Parent.Page.Title "Prioridades" }}
+
+        {{ $planes := where (where .Pages "Section" "planes") "Params.datos.estado" "v"}}
+        {{ if $planes }}
+        <h4>Relación de planes asociados a esta prioridad</h4>
+        <ul>
+          {{ range $planes }}
+          <li>
+            <a href="{{ .Permalink }}">
+              {{ .LinkTitle }}
+            </a>
+            {{ .Params.consejerias }}
+
+          </li>
+          {{ end}}
+        </ul>
+        {{ end }}
+
+
+        {{ else }}
+
+        {{ range .Pages.GroupByParam "bloque" }}
+
+        <h4> {{ .Key | humanize }} </h4>
+        <ul>
+          {{ range .Pages }}
+          <li hugo-nav="{{ .RelPermalink}}">
+            <a href="{{ .Permalink}}">
+              {{ .LinkTitle }}
+            </a>
+            <ul>
+              {{ range where .Site.Taxonomies.lineas "Params.prioridades" .File.ContentBaseName}}
+              <li>
+                <a href="{{ .Page.Permalink}}">
+                  {{ .Page.LinkTitle }}
+                </a>
+              </li>
+              {{ end}}
+            </ul>
+          </li>
+          {{ end}}
+        </ul>
+
+        {{ end }}
+        {{ end }}
+
+        <div class="title is-3 has-text-success">
+		  Líneas de actuación / Relación de actuaciones
+		</div>
+
+        {{ .Content }}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

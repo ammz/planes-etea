@@ -1,0 +1,5 @@
+baseURL = "https://planes.binfante.es/"
+publishDir = "publico"
+
+theme = "planes"
+

@@ -1,0 +1,7 @@
+.DS_Store
+web-planes/certs/
+web-planes/content/
+web-planes/node_modules/
+web-planes/public/
+web-planes/.hugo_build.lock
+planes-pdf/

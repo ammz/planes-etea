@@ -1,0 +1,105 @@
+{{ define "main" }}
+  <div>
+
+    <!-- <h2 class="text-xl">BLOQUE {{ .Params.bloque | upper }}</h2> -->
+
+    <details class="p-0 mb-1">
+      <!-- <summary><spam class="border-b-3 border-sky-400 text-xs text-gray-500">Prioridades</spam></summary> -->
+      <summary><spam class="text-xl">BLOQUE {{ .Params.bloque | upper }}</spam></summary>
+      <div class="text-xs ml-3 rounded-sm border-1 border-gray-300 bg-yellow-100/10 p-2">
+	<hr/>
+	{{ range (where (where .Site.Pages "Section" "prioridades") "Params.bloque" .Params.bloque) }}
+	  <a href="{{ .Permalink }}">{{ .LinkTitle }}</a><br/>
+	{{ end }}
+	<hr/>
+      </div>
+    </details>
+
+    
+    <h3 class="text-2xl text-gray-600 border-b-1 border-gray-300 mb-3">Prioridad {{ .Title }}</h3>
+
+    <div class="flex flex-row">
+      <!-- Planes vigentes asociados -->
+      <div class="w-1/2 mr-2"> 
+	{{ $planes_v := where (where .Pages "Section" "planes") "Params.datos.estado" "v"}}
+	{{ if $planes_v }}
+	  <div class="card lg:card-side bg-base-100 shadow-sm mb-4">
+	    <div class="card-body">
+	      <h4 class="text-red-400 border-b-1 border-red-300">Planes vigentes asociados</h4>
+	      <ul>
+		{{ range $planes_v }}
+		  <li class="text-cyan-700 list-decimal ml-4">
+		    <a href="{{ .Permalink }}">
+		      {{ .LinkTitle }}
+		    </a>
+
+		    {{ $consej := (printf "%s" .Params.consejerias) }}
+		    {{ range .Site.Taxonomies.consejerias }}
+		      {{ if in $consej (upper .Page.Data.Term) }}
+			- <a class="text-blue-300" href="{{ .Page.Permalink }}">{{ upper .Page.Data.Term }}</a>
+		      {{ end }}
+		    {{ end }}
+		  </li>
+
+		{{ end}}
+	      </ul>
+	    </div>
+	  </div>
+	{{ end }}
+
+	{{ $planes_t := where (where .Pages "Section" "planes") "Params.datos.estado" ""}}
+	{{ if $planes_t }}
+	  <div class="card lg:card-side bg-base-100 shadow-sm mb-4">
+	    <div class="card-body">
+	      <h4 class="text-red-400 border-b-1 border-red-300">Planes en tramitación asociados</h4>
+	      <ul>
+		{{ range $planes_t }}
+		  <li class="text-cyan-700 list-decimal ml-4">
+		    <a href="{{ .Permalink }}">
+		      {{ .LinkTitle }}
+		    </a>
+
+		    {{ $consej := (printf "%s" .Params.consejerias) }}
+		    {{ range .Site.Taxonomies.consejerias }}
+		      {{ if in $consej (upper .Page.Data.Term) }}
+			- <a class="text-blue-300" href="{{ .Page.Permalink }}">{{ upper .Page.Data.Term }}</a>
+		      {{ end }}
+		    {{ end }}
+		  </li>
+		{{ end}}
+	      </ul>
+	    </div>
+	  </div>
+	{{ end }}
+
+      </div>
+
+      <!-- Líneas de actuación -->
+      <div class="w-1/2 ml-2">
+	<div class="card lg:card-side bg-base-100 shadow-sm mb-4">
+	  <div class="card-body">
+	  <h4 class="text-green-700 border-b-1 border-green-600">Líneas de actuación</h4>
+	  <ol>
+	    {{ range where .Site.Taxonomies.lineas "Params.prioridades" .File.ContentBaseName }}
+	      <li class="text-green-700 list-[upper-alpha] ml-5">
+		<a href="{{ .Page.Permalink }}">
+		  {{ .Page.LinkTitle }}
+		</a>
+		<ol>
+		  {{ range .Pages.ByParam "cod" }}
+		    <li class="text-gray-400 list-decimal py-1 text-xs">
+		      <a href="{{ .Permalink }}">
+			{{ .Title }}
+		      </a>
+		    </li>
+		  {{ end }}
+		</ol>
+	      </li>
+	    {{ end}}
+	  </ol>
+	</div>
+	</div>
+      </div>
+    </div>
+  </div>
+{{ end }}

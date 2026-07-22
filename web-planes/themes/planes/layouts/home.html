@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  {{ if $.Description }}
+    <meta name="description" content="{{ $.Description }} ">
+  {{ end }}
+
+  <title>
+    {{ if .IsHome }}
+      {{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}
+    {{ end }}
+  </title>
+  
+  <link type="image/png" sizes="16x16" rel="icon" href="{{ site.BaseURL }}img/favicon.png">
+
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
+  {{ end }}
+
+  {{ $js := resources.Get "js/main.js"}}
+  <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+</head>
+
+<html>
+  <body>
+    <div class="hero bg-base-200 min-h-screen bg-green-400">
+      <div class="hero-content text-center">
+	<div class="max-w-xl">
+	  {{ if $.Title }}
+	    <h1 class="text-5xl font-bold text-gray-600">{{ $.Title }}</h1>
+          {{ end }}
+	  {{ if $.Params.subtitle }}
+            <p class="text-xl font-bold">
+	      {{ $.Params.subtitle }}
+	    </p>
+          {{end}}
+
+	  <div class="pt-8">
+	    <a href="planes" class="btn btn-soft btn-primary">
+	      Listado de planes
+	    </a>
+	    <a href="consejerias" class="btn btn-soft btn-primary">
+	      Selección por Consejería
+            </a>
+	  </div>
+	</div>
+      </div>
+  </body>
+</html>
