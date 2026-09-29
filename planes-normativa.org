@@ -4674,6 +4674,21 @@ Por último, está previsto poner en marcha el Programa Alma Jóvenes, cuya fina
 {{{fresumen}}}
 
 {{{fapartado}}}
+**** Contenido                                                    :ignore:
+{{{apartado(Contenido,checked)}}}
+
+El plan se divide en varias ayudas y programas específicos gestionados por la Consejería de Empleo:
+
+1. Programa Andalucía Activa: Dinero destinado a contratos de seis meses en ayuntamientos para jóvenes y personas mayores de 45 años.
+2. Programa Emplea-T: Ayudas de dinero directo a las empresas y autónomos para que contraten de forma fija (indefinida) o en prácticas a menores de 30 años.
+3. Programa Activa-T Joven: Una iniciativa conectada a los ayuntamientos andaluces para dar trabajo de 6 meses a jornada completa a miles de jóvenes desempleados.
+4. Programa T-Acompañamos: Proyectos pensados especialmente para jóvenes que tienen más dificultades para entrar al mercado laboral.
+5. Construyendo Futuro: Un plan especial de empleo con experiencia profesional adaptado a las zonas del Campo de Gibraltar y Barbate.
+---
+*Ver más:* [[https://ws040.juntadeandalucia.es/webconsejos/cgobierno/transparencia/241112/documentos/9Expediente.pdf][Memoria justificativa]]
+
+
+{{{fapartado}}}
 *** Estrategia Andaluza de Seguridad y Salud en el Trabajo 2024-2028
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: estrategia-seguridad-salud-trabajo-24-28
@@ -13387,6 +13402,7 @@ La Estrategia para una Administración Pública Innovadora 2023-2030 estará ali
 :PROPERTIES:
 :Consejeria: CJALFP
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :consejerias '(CJALFP)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :doc https://juntadeandalucia.es/sites/default/files/2023-10/CJALFP-231027-I%20Plan%20Igualdad_Administracion_General_JuntaAndalucia%202023-2027.pdf
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :datos '((fformulado . "") (finfpub . "2023-09-14--2023-10-04") (faprobado . "2023-10-27") (estado . "v"))
 :EXPORT_HUGO_BUNDLE: plan-igualdad-administracion
 :EXPORT_FILE_NAME: index

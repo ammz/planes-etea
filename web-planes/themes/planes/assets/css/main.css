@@ -19,14 +19,20 @@
 div.lista ul ul {
     @apply pl-4;
 }
+
+div.tab-content p, li {
+    @apply text-gray-500 text-sm;
+}
+
 div.lista li {
     @apply list-outside;
 }
+
+div.tab-content a {
+    @apply underline-offset-auto text-sky-700;
+}
 div.tab-content li {
     @apply list-disc list-outside ml-4 my-2;
-}
-div.tab-content p {
-    @apply text-gray-500 text-sm;
 }
 .outline-1 {
     @apply mb-8 outline-0;

@@ -6389,11 +6389,10 @@ Todo ello requiere:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :bloque "5. territorio"
 :END:
 #+BIND: org-export-filter-final-output-functions (filtro-hugo-js)
-*** Indicadores
-**** 50. Diferencial en los índices de envejecimiento rural vs. Urbano :ind:
-***** Revisar                                                  :noexport:
+*** Indicadores                                                    :ignore:
+**** COMMENT 50. Diferencial en los índices de envejecimiento rural vs. Urbano :ignore:
 {{{mychart(49765,2010,"----")}}}
-#+BEGIN_SRC js :exports code
+#+BEGIN_SRC js
   // jerarquias
   var indTerritorio = 0;
   var indYear = 1;
@@ -6658,7 +6657,7 @@ Todo ello requiere:
 #+END_SRC
 {{{fmychart}}}
 **** 057. Brecha salarial de género no ajustada                   :ignore:
-{{{mychart(16619,2017,"")}}}
+{{{mychart(16619,2017,"Brecha salarial de género no ajustada")}}}
 #+BEGIN_SRC js
   // jerarquias
   var indTerritorio = 0;
