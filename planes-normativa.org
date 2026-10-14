@@ -3994,7 +3994,7 @@ En cuanto a la tercera y última área, la económica, los fondos se emplearán 
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: i-estrategia-viñedo-vino
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :consejerias '(CAPADR)
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :datos '((fformulado . "") (finfpub . "") (faprobado . "") (estado . ""))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :datos '((fformulado . "2026-10-13") (finfpub . "") (faprobado . "") (estado . ""))
 :EXPORT_FILE_NAME: index
 :HTML_CONTAINER_NESTED: t
 :EXPORT_HTML_CONTAINER: div
@@ -4002,7 +4002,7 @@ En cuanto a la tercera y última área, la económica, los fondos se emplearán 
 **** Tramitación                                                  :ignore:
 {{{apartado(Tramitación,checked)}}}
 ***** Formulación
-****** Acuerdo por el que se aprueba la formulación de la Primera Estrategia del viñedo y el vino de Andalucía 2028-2031
+****** [[https://juntadeandalucia.es/eboja/2026/198/BOJA26-198-00003-13369-01_00344599.pdf][Acuerdo de 7 de octubre de 2026, del Consejo de Gobierno, por el que se aprueba la formulación de la Primera Estrategia del viñedo y el vino de Andalucía 2028-2031]] ([[https://juntadeandalucia.es/eboja/2026/198/][BOJA 198]] de 2026)
 ******* Resumen                                                :ignore:
 {{{resumen(687460,2026-10-07)}}}
 *Aprobada la formulación de la primera Estrategia del Viñedo y el Vino de Andalucía 2028-2031*
@@ -13109,7 +13109,7 @@ Las líneas de subvenciones en el ámbito de la Consejería de Fomento, Infraest
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: ii-estrategia-ciberseguridad
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :consejerias '(CIADDAP)
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :datos '((fformulado . "") (finfpub . "") (faprobado . "") (estado . ""))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :datos '((fformulado . "2026-10-13") (finfpub . "") (faprobado . "") (estado . ""))
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :prioridades '(P0102)
 :EXPORT_FILE_NAME: index
 :HTML_CONTAINER_NESTED: t
@@ -13118,7 +13118,7 @@ Las líneas de subvenciones en el ámbito de la Consejería de Fomento, Infraest
 **** Tramitación                                                  :ignore:
 {{{apartado(Tramitación,checked)}}}
 ***** Formulación
-****** Acuerdo por el que se aprueba la formulación de la II Estrategia Andaluza de Ciberseguridad 2027-2030
+****** [[https://juntadeandalucia.es/eboja/2026/198/BOJA26-198-00006-13370-01_00344600.pdf][Acuerdo de 7 de octubre de 2026, del Consejo de Gobierno, por el que se aprueba la formulación de la II Estrategia Andaluza de Ciberseguridad 2027-2030]] ([[https://juntadeandalucia.es/eboja/2026/198/][BOJA 198]] de 2026)
 ******* Resumen                                                :ignore:
 {{{resumen(687442,2026-10-07)}}}
 *El Consejo de Gobierno aprueba la formulación de la II Estrategia Andaluza de Ciberseguridad*
