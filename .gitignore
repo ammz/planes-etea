@@ -4,4 +4,5 @@ web-planes/content/
 web-planes/node_modules/
 web-planes/public/
 web-planes/.hugo_build.lock
+web-planes/hugo_stats.json
 planes-pdf/
